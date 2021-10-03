@@ -116,31 +116,31 @@
         return {
             productosArray : [
             {
-                img:"./src/producto.png",
+                img: require('../assets/producto.png'),
                 nombreProducto:"Taladro percutor",
                 descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
                 precio: "$ 200.000"
             },
             {
-                img:"../assets/producto.png",
+                img: require('../assets/producto.png'),
                 nombreProducto:"Taladro percutor",
                 descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
                 precio: "$ 200.000"
             },
             {
-                img:"../src/producto.png",
+                img: require('../assets/producto.png'),
                 nombreProducto:"Taladro percutor",
                 descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
                 precio: "$ 200.000"
             },
             {
-                img:"../src/producto.png",
+                img: require('../assets/producto.png'),
                 nombreProducto:"Taladro percutor",
                 descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
                 precio: "$ 200.000"
             },
             {
-                img:"../src/producto.png",
+                img: require('../assets/producto.png'),
                 nombreProducto:"Taladro percutor",
                 descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
                 precio: "$ 200.000"
