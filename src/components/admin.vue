@@ -59,7 +59,7 @@ export default {
   },
 }
 </script>
-<style>
+<!-- <style>
 .admin {
   display: flex;
 }
@@ -93,4 +93,4 @@ export default {
 a :hover {
   text-decoration: none;
 }
-</style>
+</style> !-->
