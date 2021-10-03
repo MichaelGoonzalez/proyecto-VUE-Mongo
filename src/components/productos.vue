@@ -41,7 +41,7 @@
             <div id="app" class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for="item in productosArray" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
                     <section class="row">
-                        <div v-for="item in productosArray" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab">
                     <section class="row">
-                        <div v-for="item in productosArray" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -89,7 +89,7 @@
                 </div>
                 <div class="tab-pane fade" id="maderas" role="tabpanel" aria-labelledby="maderas-tab">
                     <section class="row">
-                        <div v-for="item in productosArray" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">

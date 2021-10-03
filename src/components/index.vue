@@ -1,85 +1,24 @@
 <template>
   <div>
-    <body class="d-flex h-100 text-center text-white">
-      <div class="bg-black bg-opacity-50 bg-cover bg-filter"></div>   
-      <div class="bg-cover" style="background-image: url(../assets/background.jpeg);"></div>
-      <div class="d-flex w-100 h-100  mx-auto flex-column">
-          <header class="mb-auto">
-              <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-                  <div class="container">
-                      <a class="navbar-brand" href="/html/index.html">
-                          <img src="../assets/logo.png" alt="" width="141" height="40" class="d-inline-block align-text-top" />
-                      </a>
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                          aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                          <div class="d-flex">
-                              <ul class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
-                                  <li class="nav-item">
-                                      <a class="nav-link active color-marca" aria-current="page"
-                                          href="/html/index.html">Inicio</a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <router-link class="nav-link" to="/nosotros" >Nosotros</router-link>
-                                  </li>
-                                  <li class="nav-item">
-                                      <router-link class="nav-link" to="/productos">Productos</router-link>
-                                  </li>
-                                  <li class="nav-item">
-                                      <router-link class="nav-link" to="/articulos">Artículos</router-link>
-                                  </li>
-                                  <li class="nav-item">
-                                      <router-link class="nav-link" to="/contacto" >Contacto</router-link>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </nav>
-          </header>
+    <main class="container">
+            <section class="row d-flex justify-content-evenly">
+                <div class="col-lg-4 my-auto">
+                    <h1 class="color-marca">Carvajal Materiales</h1>
+                    <p class="lead">
+                        ¡Bienvenidos! Carvajal Materiales te provee 
+                        materiales de construcción para que cumplas tus 
+                        proyectos de remodelación para tu hogar y productos de 
+                        ferretería en general.
+                        Ven a conocernos  y contruYAmos juntos!!
 
-          <main class="container">
-              <section class="row d-flex justify-content-evenly">
-                  <div class="col-lg-4 my-auto">
-                      <h1 class="color-marca">Carvajal Materiales</h1>
-                      <p class="lead">
-                          ¡Bienvenidos! Carvajal Materiales te provee 
-                          materiales de construcción para que cumplas tus 
-                          proyectos de remodelación para tu hogar y productos de 
-                          ferretería en general.
-                          Ven a conocernos  y contruYAmos juntos!!
-
-                      </p>                
-                      <a href="productos.html" class="btn btn-primary">Ver productos</a>
-                  </div>
-                  <div class="col-4 my-auto d-none d-lg-block">
-                      <img src="../assets/imgIndex.png" width="100%" alt="imagen">
-                  </div>
-              </section>
-          </main>
-
-          <footer class="footer mt-auto text-white bg-black p-3">
-              <div class="container-fluid">
-                  <div class="d-lg-flex justify-content-lg-center">
-                      <div class="">
-                          &copy; {{año}} Carvajal Materiales | Todos los derechos reservados.
-                      </div>
-                      <div class="mx-4">
-                          <a class="text-white" href="https://www.facebook.com/Carvajalmateriales" target="_blank"><i class="fab fa-facebook"></i></a>
-                          <a class="text-white" href="https://www.instagram.com/carvajalmateriales/" target="_blank"><i class="fab fa-instagram"></i></a>
-                          <a class="text-white" href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                      </div>
-                      <div class="">
-                      </div>
-                  </div>
-              </div>
-          </footer>
-      </div>
-    </body>
+                    </p>                
+                    <a href="productos.html" class="btn btn-primary">Ver productos</a>
+                </div>
+                <div class="col-4 my-auto d-none d-lg-block">
+                    <img src="/img/imgIndex.png" width="100%" alt="imagen">
+                </div>
+            </section>
+        </main>
   </div>
 </template>
 
@@ -91,16 +30,15 @@
 <script>
   export default {
     data() {
-      año: ""
+      return {
+        año: ""
+      }
     },
     methods: {
-        obtenerAño: function(){
-          return this.año = new Date().getFullYear();
+        obtenerAño(){
+            return this.año = new Date().getFullYear();
         }
     },
-    mounted: function(){
-      this.obtenerAño = this.año;
-    }
-  };
+  }
 </script>
 
