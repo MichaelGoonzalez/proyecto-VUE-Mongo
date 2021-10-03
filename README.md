@@ -1,8 +1,8 @@
-# my-vue-cli
+# Proyecto Ferretería
 
 ## Project setup
 ```
-git clone https://github.com/JavierPinzon34/Plantilla-Vue-UTP.git
+git clone https:https://github.com/MichaelGoonzalez/proyecto-VUE-Mongo.git
 cd Plantilla-Vue-UTP
 npm install
 npm run serve
