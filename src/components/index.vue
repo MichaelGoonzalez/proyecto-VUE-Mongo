@@ -1,230 +1,106 @@
 <template>
   <div>
-    <div>
-      <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <body class="d-flex h-100 text-center text-white">
+      <div class="bg-black bg-opacity-50 bg-cover bg-filter"></div>   
+      <div class="bg-cover" style="background-image: url(../assets/background.jpeg);"></div>
+      <div class="d-flex w-100 h-100  mx-auto flex-column">
+          <header class="mb-auto">
+              <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+                  <div class="container">
+                      <a class="navbar-brand" href="/html/index.html">
+                          <img src="../assets/logo.png" alt="" width="141" height="40" class="d-inline-block align-text-top" />
+                      </a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                          aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                          <div class="d-flex">
+                              <ul class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
+                                  <li class="nav-item">
+                                      <a class="nav-link active color-marca" aria-current="page"
+                                          href="/html/index.html">Inicio</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <router-link class="nav-link" to="/nosotros" >Nosotros</router-link>
+                                  </li>
+                                  <li class="nav-item">
+                                      <router-link class="nav-link" to="/productos">Productos</router-link>
+                                  </li>
+                                  <li class="nav-item">
+                                      <router-link class="nav-link" to="/articulos">Artículos</router-link>
+                                  </li>
+                                  <li class="nav-item">
+                                      <router-link class="nav-link" to="/contacto" >Contacto</router-link>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </nav>
+          </header>
 
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <main class="container">
+              <section class="row d-flex justify-content-evenly">
+                  <div class="col-lg-4 my-auto">
+                      <h1 class="color-marca">Carvajal Materiales</h1>
+                      <p class="lead">
+                          ¡Bienvenidos! Carvajal Materiales te provee 
+                          materiales de construcción para que cumplas tus 
+                          proyectos de remodelación para tu hogar y productos de 
+                          ferretería en general.
+                          Ven a conocernos  y contruYAmos juntos!!
 
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item href="#section1">Seccion 1</b-nav-item>
-            <b-nav-item href="#section2">Seccion 2</b-nav-item>
-          </b-navbar-nav>
+                      </p>                
+                      <a href="productos.html" class="btn btn-primary">Ver productos</a>
+                  </div>
+                  <div class="col-4 my-auto d-none d-lg-block">
+                      <img src="../assets/imgIndex.png" width="100%" alt="imagen">
+                  </div>
+              </section>
+          </main>
 
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-form>
-              <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-            </b-nav-form>
-
-            <b-nav-item-dropdown text="Lang" right>
-              <b-dropdown-item href="#">EN</b-dropdown-item>
-              <b-dropdown-item href="#">ES</b-dropdown-item>
-              <b-dropdown-item href="#">RU</b-dropdown-item>
-              <b-dropdown-item href="#">FA</b-dropdown-item>
-            </b-nav-item-dropdown>
-
-           <!--  <b-nav-item-dropdown right>
-              <template #button-content>
-                <em>User</em>
-              </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-            </b-nav-item-dropdown> -->
-          </b-navbar-nav>
-          <b-navbar-nav>
-            <router-link class="nav-link" to="/login">Login</router-link>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
-    <div>
-      <b-img src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
-    </div>
-    <div class="container mt-5">
-      <section id="section1">
-        <h1 class="mb-4">Primera sección</h1>
-        <b-row>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://picsum.photos/600/300/?image=25"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-        </b-row>
-      </section>
-      <section id="section2" class="mt-5">
-        <h1 class="mb-4">Segunda sección</h1>
-        <b-row>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://placekitten.com/1000/300"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://placekitten.com/1000/300"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://placekitten.com/1000/300"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-          <b-col sm="6" md="4" lg="3">
-            <b-card
-              title="Card Title"
-              img-src="https://placekitten.com/1000/300"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="mb-2"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
-
-              <b-button href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </b-col>
-        </b-row>
-      </section>
-    </div>
-    <transition name="fade">
-      <a v-if="!isVisibleUpButton" href="#" class="back-to-top"><b-icon-arrow-up-circle-fill font-scale="3"></b-icon-arrow-up-circle-fill></a>
-    </transition>
-    <footer class="d-flex bg-dark text-light align-items-center px-3 py-2">
-      <div class="text-center w-100">
-        <strong class="mr-auto">Footer</strong>
+          <footer class="footer mt-auto text-white bg-black p-3">
+              <div class="container-fluid">
+                  <div class="d-lg-flex justify-content-lg-center">
+                      <div class="">
+                          &copy; {{año}} Carvajal Materiales | Todos los derechos reservados.
+                      </div>
+                      <div class="mx-4">
+                          <a class="text-white" href="https://www.facebook.com/Carvajalmateriales" target="_blank"><i class="fab fa-facebook"></i></a>
+                          <a class="text-white" href="https://www.instagram.com/carvajalmateriales/" target="_blank"><i class="fab fa-instagram"></i></a>
+                          <a class="text-white" href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                      </div>
+                      <div class="">
+                      </div>
+                  </div>
+              </div>
+          </footer>
       </div>
-    </footer>
+    </body>
   </div>
 </template>
+
+<!-- Comment 
+/* <script>
+  document.write(new Date().getFullYear());
+</script>  -->
+
 <script>
-export default {
-  data() {
-    return {
-      isVisibleUpButton: true,
-      scrollPosition: 0,
+  export default {
+    data() {
+      año: ""
+    },
+    methods: {
+        obtenerAño: function(){
+          return this.año = new Date().getFullYear();
+        }
+    },
+    mounted: function(){
+      this.obtenerAño = this.año;
     }
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      this.scrollPosition = window.scrollY
-    }
-  },
-  watch: {
-    scrollPosition() {
-      if (this.scrollPosition > 100) {
-        this.isVisibleUpButton = false;
-      } else {
-        this.isVisibleUpButton = true;
-      }
-    }
-  },
-}
+  };
 </script>
-<style>
-.back-to-top {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-}
-</style>
+
