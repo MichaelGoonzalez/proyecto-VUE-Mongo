@@ -14,9 +14,10 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                         <div class="d-flex">
-                            <ul class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <router-link to="/" class="nav-link active color-marca" aria-current="page">Inicio</router-link>
+                            <ul class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0 mr-auto">
+                                <li class="nav-item active">
+                                    <!-- <router-link to="/" class="nav-link active color-marca" aria-current="page">Inicio</router-link> -->
+                                    <router-link to="/" class="nav-link" aria-current="page">Inicio</router-link>
                                     <!-- <a class="nav-link active color-marca" aria-current="page"
                                         href="/html/index.html">Inicio</a> -->
                                 </li>
@@ -34,9 +35,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="">Contacto</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">Ingresar</a>
                                 </li>
                             </ul>
                         </div>
