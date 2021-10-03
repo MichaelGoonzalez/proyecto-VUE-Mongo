@@ -1,5 +1,7 @@
 <template>
-    <main class="container my-5">
+
+    <div>
+        <main class="container my-5">
             <div class="row">
                 <section class="col-md-10 mx-auto">
                     <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
@@ -38,12 +40,12 @@
                     </ul>
                 </section>
             </div>
-            <div id="app" class="tab-content">
+            <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
+                                <img v-bind:src= "item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombreProducto}}</h5>
                                     <p class="card-text text-black">
@@ -55,11 +57,11 @@
                         </div>
                     </section>
                 </div>
-                <div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
+                <!-- <div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
+                                <img v-bind:src= "item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombreProducto}}</h5>
                                     <p class="card-text text-black">
@@ -73,7 +75,7 @@
                 </div>
                 <div class="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id1" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -89,7 +91,7 @@
                 </div>
                 <div class="tab-pane fade" id="maderas" role="tabpanel" aria-labelledby="maderas-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" v-bind:key = "item" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id3" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -102,7 +104,52 @@
                             </div>
                         </div>
                     </section>
-                </div>
+                </div> -->
             </div>
         </main>
+    </div>
 </template>
+
+<script>
+    export default {
+    data() {
+        return {
+            productosArray : [
+            {
+                img:"./src/producto.png",
+                nombreProducto:"Taladro percutor",
+                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                precio: "$ 200.000"
+            },
+            {
+                img:"../assets/producto.png",
+                nombreProducto:"Taladro percutor",
+                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                precio: "$ 200.000"
+            },
+            {
+                img:"../src/producto.png",
+                nombreProducto:"Taladro percutor",
+                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                precio: "$ 200.000"
+            },
+            {
+                img:"../src/producto.png",
+                nombreProducto:"Taladro percutor",
+                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                precio: "$ 200.000"
+            },
+            {
+                img:"../src/producto.png",
+                nombreProducto:"Taladro percutor",
+                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                precio: "$ 200.000"
+            }     
+            ],
+        }
+    },
+    methods: {
+
+    },
+    }
+</script>
