@@ -42,7 +42,7 @@
                     <section class="row">
                         <div v-for = "item in articulosArray" :key= "item.id" class="col-6 mt-5">
                             <div class="card m-auto shadow" style="width: 400px;">
-                                <img v-bind:src= "'item.img'" class="card-img-top" alt="Imagen articulo">
+                                <img v-bind:src= "item.img" class="card-img-top" alt="Imagen articulo">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                     <h5 class="card-title text-black">{{item.titulo}}</h5>
@@ -111,10 +111,9 @@
     export default {
     data() {
         return {
-                imagen: "/public/tutorial.png",
             articulosArray: [
                 {
-                    img: "../assets/tutorial.png",
+                    img: require('../assets/tutorial.png'),
                     clase: "Tutorial",
                     titulo: "¿Cómo ajustar los muebles adecuadamente?",
                     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
@@ -123,7 +122,7 @@
 
                 },
                 {
-                    img: "../img/tutorial.png",
+                    img: require('../assets/tutorial.png'),
                     clase: "Tutorial",
                     titulo: "¿Cómo ajustar los muebles adecuadamente?",
                     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
@@ -132,7 +131,7 @@
 
                 },
                 {
-                    img: "../img/tutorial.png",
+                    img: require('../assets/tutorial.png'),
                     clase: "Tutorial",
                     titulo: "¿Cómo ajustar los muebles adecuadamente?",
                     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
@@ -141,7 +140,7 @@
 
                 },
                 {
-                    img: "../img/tutorial.png",
+                    img: require('../assets/tutorial.png'),
                     clase: "Tutorial",
                     titulo: "¿Cómo ajustar los muebles adecuadamente?",
                     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
@@ -150,7 +149,7 @@
 
                 },
                 {
-                    img: "../img/tutorial.png",
+                    img: require('../assets/tutorial.png'),
                     clase: "Tutorial",
                     titulo: "¿Cómo ajustar los muebles adecuadamente?",
                     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
@@ -159,7 +158,7 @@
 
                 },
                 {
-                    img: "../img/tutorial.png",
+                    img: require('../assets/tutorial.png'),
                     clase: "Tutorial",
                     titulo: "¿Cómo ajustar los muebles adecuadamente?",
                     descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
