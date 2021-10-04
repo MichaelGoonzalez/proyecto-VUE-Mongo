@@ -11,7 +11,7 @@ import Nosotros from './components/nosotros.vue'
 import Productos from './components/productos.vue'
 import Articulos from './components/articulos.vue'
 import Contacto from './components/contacto.vue'
-import Admin from './components/admin.vue'
+/* import Admin from './components/admin.vue' */
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
@@ -25,7 +25,7 @@ const routes = [
   { path: '/productos', component: Productos},
   { path: '/articulos', component: Articulos},
   { path: '/contacto', component: Contacto },
-  { path: '/admin', component: Admin}
+  /* { path: '/admin', component: Admin} */
 ]
 
 const router = new VueRouter({
