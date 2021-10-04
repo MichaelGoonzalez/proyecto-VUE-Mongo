@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex w-100 h-100  mx-auto flex-column">
+    <div class="d-flex w-100 h-100 mx-auto flex-column">
         <header class="mb-auto">
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container">
@@ -49,7 +49,7 @@
                 <div class="container-fluid">
                     <div class="d-lg-flex justify-content-lg-center">
                         <div class=" ">
-                            {{obtenerAño()}}
+                            {{año}}
                             &copy;  Carvajal Materiales | Todos los derechos reservados.
                         </div>
                         <div class="mx-4">
@@ -69,14 +69,9 @@
     export default {
         name: 'App',
         data(){
-        return {
-            año: ""
-        }
-        },
-        methods: {
-            obtenerAño(){
-                return this.año = new Date().getFullYear();
+            return {
+                año: new Date().getFullYear()
             }
-        },
+        }
     }
 </script>
