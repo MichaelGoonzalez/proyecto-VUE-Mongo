@@ -1,30 +1,26 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+/* import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'  */
 import VueRouter from 'vue-router'
 
 /* import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'  */
 
-import Home from './components/home.vue'
-import Nosotros from './components/nosotros.vue'
+import Home from './components/index.vue'
 import Productos from './components/productos.vue'
-import Articulos from './components/articulos.vue'
-import Contacto from './components/contacto.vue'
+import Articulos from "./components/articulos.vue"
 import Admin from './components/admin.vue'
 
-Vue.use(BootstrapVue)
-Vue.use(BootstrapVueIcons)
+/* Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons) */
 Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
 const routes = [
-  { path: '/home', component: Home },
-  { path: '/nosotros', component: Nosotros },
+  { path: '/', component: Home },
   { path: '/productos', component: Productos},
   { path: '/articulos', component: Articulos},
-  { path: '/contacto', component: Contacto },
   { path: '/admin', component: Admin}
 ]
 
