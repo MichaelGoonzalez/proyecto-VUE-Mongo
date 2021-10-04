@@ -3,7 +3,7 @@
         <header class="mb-auto">
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container">
-                    <router-link to="/" class="nav-link">
+                    <router-link to="/" class="navbar-brand">
                         <img src="../src/assets/logo.png" alt="" width="141" height="40" class="d-inline-block align-text-top" />
                     </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,10 +33,8 @@
                                     <!-- <a class="nav-link" href="articulos.html">Artículos</a> -->
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Contacto</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="">Ingresar</a>
+                                    <router-link to="/contacto" class="nav-link">Contacto</router-link>
+                                    <!-- <a class="nav-link" href="">Contacto</a> -->
                                 </li>
                             </ul>
                         </div>
@@ -50,7 +48,7 @@
         <footer class="footer mt-auto text-white bg-black p-3">
                 <div class="container-fluid">
                     <div class="d-lg-flex justify-content-lg-center">
-                        <div class="">
+                        <div class=" ">
                             {{obtenerAño()}}
                             &copy;  Carvajal Materiales | Todos los derechos reservados.
                         </div>

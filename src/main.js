@@ -9,6 +9,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'  */
 import Home from './components/index.vue'
 import Productos from './components/productos.vue'
 import Articulos from "./components/articulos.vue"
+import Contacto from "./components/contacto.vue"
 import Admin from './components/admin.vue'
 
 /* Vue.use(BootstrapVue)
@@ -21,6 +22,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/productos', component: Productos},
   { path: '/articulos', component: Articulos},
+  { path: '/contacto', component: Contacto},
   { path: '/admin', component: Admin}
 ]
 
