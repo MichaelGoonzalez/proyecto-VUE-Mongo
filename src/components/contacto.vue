@@ -40,5 +40,5 @@
                     </aside>
                 </div>
             </section>
-        </main>
+    </main>
 </template>
