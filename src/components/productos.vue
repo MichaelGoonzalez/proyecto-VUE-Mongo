@@ -57,13 +57,13 @@
                         </div>
                     </section>
                 </div>
-                <!-- <div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
+                <div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
                     <section class="row">
                         <div v-for= "item in productosArray" :key= "item.id" class="col-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src= "item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
-                                    <h5 class="card-title color-marca">{{item.nombreProducto}}</h5>
+                                    <h5 class="card-title color-marca">"Segunda" + {{item.nombreProducto}}</h5>
                                     <p class="card-text text-black">
                                         {{item.descripcionProducto}}
                                     </p>
@@ -79,7 +79,7 @@
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
-                                    <h5 class="card-title color-marca">{{item.nombreProducto}}</h5>
+                                    <h5 class="card-title color-marca">"Tercera " + {{item.nombreProducto}}</h5>
                                     <p class="card-text text-black">
                                         {{item.descripcionProducto}}
                                     </p>
@@ -95,7 +95,7 @@
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
-                                    <h5 class="card-title color-marca">{{item.nombreProducto}}</h5>
+                                    <h5 class="card-title color-marca">"Cuarta " + {{item.nombreProducto}}</h5>
                                     <p class="card-text text-black">
                                         {{item.descripcionProducto}}
                                     </p>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                     </section>
-                </div> -->
+                </div>
             </div>
         </main>
     </div>
