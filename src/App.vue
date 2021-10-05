@@ -14,26 +14,26 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                         <div class="d-flex">
-                            <ul class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
+                            <ul id="nav" class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <router-link to="/" class="nav-link active color-marca" aria-current="page">Inicio</router-link>
+                                    <router-link to="/" class="nav-link" active-class="" aria-current="page">Inicio</router-link>
                                     <!-- <a class="nav-link active color-marca" aria-current="page"
                                         href="/html/index.html">Inicio</a> -->
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/nosotros" class="nav-link">Nosotros</router-link>
+                                    <router-link to="/nosotros" class="nav-link" active-class="active">Nosotros</router-link>
                                     <!-- <a class="nav-link" href="nosotros.html">Nosotros</a> -->
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/productos" class="nav-link">Productos</router-link>
+                                    <router-link to="/productos" class="nav-link" active-class="active">Productos</router-link>
                                     <!-- <a class="nav-link" href="productos.html">Productos</a> -->
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/articulos" class="nav-link">Artículos</router-link>
+                                    <router-link to="/articulos" class="nav-link" active-class="active">Artículos</router-link>
                                     <!-- <a class="nav-link" href="articulos.html">Artículos</a> -->
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/contacto" class="nav-link">Contacto</router-link>
+                                    <router-link to="/contacto" class="nav-link" active-class="active">Contacto</router-link>
                                     <!-- <a class="nav-link" href="">Contacto</a> -->
                                 </li>
                             </ul>
@@ -64,6 +64,13 @@
         </footer>
     </div>
 </template>
+
+<style>
+    
+    #nav a.router-link-exact-active {
+        color: #f6821f;
+    }
+</style>
 
 <script>
     export default {

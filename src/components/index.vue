@@ -13,8 +13,9 @@
                           ferretería en general.
                           Ven a conocernos  y contruyamos juntos!!
 
-                      </p>                
-                      <a href="/" class="btn btn-primary">Ver productos</a>
+                      </p>           
+                      <router-link to="/productos" class="btn btn-primary">Ver productos</router-link>     
+                      <!-- <a href="/" class="btn btn-primary">Ver productos</a> -->
                   </div>
                   <div class="col-4 my-auto d-none d-lg-block">
                       <img src="../assets/imgIndex.png" width="100%" alt="imagen">
