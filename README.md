@@ -4,6 +4,7 @@
 ```
 git clone https:https://github.com/MichaelGoonzalez/proyecto-VUE-Mongo.git
 npm install
+npm install axios
 npm run serve
 ```
 
