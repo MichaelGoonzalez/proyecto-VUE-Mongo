@@ -3,7 +3,6 @@
 ## Project setup
 ```
 git clone https:https://github.com/MichaelGoonzalez/proyecto-VUE-Mongo.git
-cd Plantilla-Vue-UTP
 npm install
 npm run serve
 ```
