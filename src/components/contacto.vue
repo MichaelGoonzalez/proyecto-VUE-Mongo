@@ -1,8 +1,8 @@
 <template>
-    <main class="container-fluid">
-            <section class="row d-flex justify-content-evenly">
-                <div class="col-12 col-lg-6 my-auto">
-                    <form action="server" method="GET">
+    <main class="container">
+            <section class="row d-flex">
+                <div class="col-10 col-lg-5 mx-auto">
+                    <form action="server" method="POST">
                         <div class="contacto">
                             <h2>Contáctanos</h2>
                             <div class="element">
@@ -22,7 +22,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-12 col-lg-6 my-auto text-center">
+                <div class="col-12 col-lg-6 mx-auto">
                     <aside id="info">
                         <article>
                             <h2>Visítanos</h2>
@@ -31,7 +31,7 @@
                         <br/>
                         <article>
                             <h2>Síguenos</h2>
-                            <div class=".mx-4">
+                            <div class="mx-auto">
                                 <a href="https://www.facebook.com/Carvajalmateriales"><i class="fab fa-facebook" style="color:blue"></i></a><p class="d-inline" style="color:black"> Facebook</p><br/>
                                 <a href="https://www.instagram.com/carvajalmateriales/"><i class="fab fa-instagram" style="color:red"></i></a><p class="d-inline" style="color:black"> Instagram</p><br/>
                                 <a href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA"><i class="fab fa-whatsapp" style="color: rgb(102, 233, 102)"></i></a><p class="d-inline" style="color:black"> Whatsapp</p><br/>

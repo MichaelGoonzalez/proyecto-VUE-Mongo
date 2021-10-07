@@ -34,9 +34,9 @@
   </div>
 </template>
 <script>
-import Category from './admin/category.vue'
-import Article from './admin/article.vue'
-import User from './admin/user.vue'
+import Category from './admin/dashcategories.vue'
+import Article from './admin/dashusers.vue'
+import User from './admin/dashproducts.vue'
 export default {
   components: {
     Category,

@@ -68,7 +68,6 @@ h2{
 
 .contenedor{
   margin: 100px auto;
-  width: 25%;
   text-align: center;
 }
 
@@ -100,9 +99,7 @@ h2{
 
 /*Formulario contacto*/
 .contacto{
-  width: 70%;
   text-align: center;
-  display:inline-block;
   margin-bottom: 30px;
 }
 .contacto h2{
