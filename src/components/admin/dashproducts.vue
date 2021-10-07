@@ -1,29 +1,10 @@
 <template>
     <div>
         <div class="container-fluid">
-            <div class="row  ">
-                <div class="col-md-2 barra2">
-                    <img class="image" src="/img/logo.png" alt="">
-                </div>
-                <div class="col-md-10 text-right barra">
-                    <ul class="navbar-nav mr-auto">
-                        <li>
-                            <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user-circle"></i></a>
-
-                            <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-
-        <div class="container-fluid">
             <div class="row">
                 <div class="barra-lateral col-md-2 col-sm-auto">
                     <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
+                        
                         <a href="#"><i class="fas fa-user-friends"></i><span>Usuarios</span></a>
                         <a href="#"><i class="fas fa-store"></i><span>Productos</span></a>
                         <a href="#"><i class="fas fa-clipboard-list"></i><span>Categorias</span></a>
