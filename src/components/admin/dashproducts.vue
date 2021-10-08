@@ -1,26 +1,6 @@
 <template>
   <div>
     <div class="container-fluid">
-        <div class="row  ">
-            <div class="col-md-2 barra2">
-                <img class="image" src="/img/logo.png" alt="">
-            </div>
-            <div class="col-md-10 text-right barra">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user-circle"></i></a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> 
-
-    <div class="container-fluid">
         <div class="row">
             <div class="barra-lateral col-md-2 col-sm-auto">
                 <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
@@ -42,9 +22,9 @@
                             
                             <div class="mb-3">
                                 <label for="producto" class="form-label"> <b> Categoria </b></label>
-                                <select type="text" class="form-control" id="producto" aria-describedby="productoactual">
+                                <select type="text" class="form-control" id="producto" aria-describedby="productoactual"></select>
                                 <div id="emailHelp" class="form-text"></div>
-                              </div>
+                            </div>
                             <div class="mb-3">
                               <label for="codeproduct" class="form-label"> <b>Codigo Producto</b></label>
                               <input type="text" class="form-control" id="codeproduct">
@@ -52,7 +32,7 @@
                             <div class="mb-3">
                                 <label for="precioProducto" class="form-label"> <b>Precio</b></label>
                                 <input type="number" class="form-control" id="precioProducto">
-                              </div>
+                            </div>
                             <div class="mb-3">
                                 <label for="precioProducto" class="form-label"> <b>Cantidad a registrar</b></label>
                                 <input type="number" class="form-control" id="precioProducto">
@@ -213,11 +193,29 @@
 
                                 </table>    
                             </div>
-                                            
+                    </div>                       
                 </div>
 
             </main>
         </div>
     </div>
+
+    <footer class="footer mt-auto text-white bg-black p-3">
+        <div class="container-fluid">
+            <div class="d-lg-flex justify-content-lg-center">
+                <div class="">
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    &copy; Carvajal Materiales | Todos los derechos reservados.
+                </div>
+                <div class="mx-4">
+                    <a class="text-white" href="https://www.facebook.com/Carvajalmateriales" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a class="text-white" href="https://www.instagram.com/carvajalmateriales/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="text-white" href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
   </div>
 </template>

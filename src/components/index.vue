@@ -15,7 +15,6 @@
 
                       </p>           
                       <router-link to="/productos" class="btn btn-primary">Ver productos</router-link>     
-                      <!-- <a href="/" class="btn btn-primary">Ver productos</a> -->
                   </div>
                   <div class="col-4 my-auto d-none d-lg-block">
                       <img src="../assets/imgIndex.png" width="100%" alt="imagen">
@@ -24,19 +23,4 @@
     </div>
   </div>  
 </template>
-
-<script>
-  export default {
-    data() {
-      return {
-        año: ""
-      }
-    },
-    methods: {
-        obtenerAño(){
-            return this.año = new Date().getFullYear();
-        }
-    },
-  }
-</script>
 
