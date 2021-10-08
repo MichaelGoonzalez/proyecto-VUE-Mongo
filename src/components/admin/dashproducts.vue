@@ -203,7 +203,7 @@
 </template>
 
 
-<style>
+<!--<style>
     body {
         background: #f1f1f1;
     }
@@ -414,8 +414,9 @@
             overflow: visible;
         }
     }
-</style>
 
+</style>
+-->
 <script>
 export default {
     data(){
