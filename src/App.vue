@@ -4,7 +4,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container">
                     <router-link to="/" class="navbar-brand">
-                        <img src="../src/assets/logo.png" alt="" width="141" height="40" class="d-inline-block align-text-top" />
+                        <img src="../src/assets/logo.png" alt="" width="150" height="40" class="d-inline-block align-text-top" />
                     </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
@@ -36,6 +36,7 @@
                                     <router-link to="/contacto" class="nav-link" active-class="active">Contacto</router-link>
                                     <!-- <a class="nav-link" href="">Contacto</a> -->
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -74,12 +75,16 @@
 </style>
 
 <script>
+
+   
+
     export default {
         name: 'App',
         data(){
             return {
                 año: new Date().getFullYear()
             }
-        }
+        },
+        
     }
 </script>
