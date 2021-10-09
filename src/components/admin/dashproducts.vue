@@ -127,7 +127,6 @@ export default {
             this.axios.get('/listar-articulos')
                 .then((response)=>{
                     this.articulosTabla = response.data;
-                    console.log(this.listarArticulos)
                 })
                 .catch(e=>{
                 console.log(e.response);
@@ -149,7 +148,7 @@ export default {
             .catch(e=>{
                 console.log(e.response);
             })
-        }
+        },
     }
 }
 </script>
