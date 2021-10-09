@@ -10,9 +10,6 @@
                         <router-link style="text-decoration:none" to="/dashproducts">
                             <i  class="fas fa-store"></i><span>Productos</span>
                         </router-link>
-                        <!-- <router-link to="">
-                            <i class="fas fa-clipboard-list"></i><span>Categorias</span>
-                        </router-link> -->
                     </nav>
                 </div>
 
