@@ -43,13 +43,13 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" :key= "item.id" class="col-3 mt-5">
-                            <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src= "item.img" class="card-img-top" alt="Imagen producto">
+                        <div v-for= "item in articulosTabla" :key= "item.id" class="col-3 mt-5">
+                            <div class="card m-auto shadow" style="width: 200px;height: 330px">
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" width="200px" height="200px" >
                                 <div class="card-body border-top text-start">
-                                    <h5 class="card-title color-marca">{{item.nombreProducto}}</h5>
+                                    <h5 class="card-title color-marca">{{item.nombre}}</h5>
                                     <p class="card-text text-black">
-                                        {{item.descripcionProducto}}
+                                        {{item.descripcion}}
                                     </p>
                                     <h5 class="card-title text-black">{{item.precio}}</h5>
                                 </div>
@@ -112,44 +112,57 @@
 
 <script>
     export default {
-    data() {
-        return {
-            productosArray : [
-            {
-                img: require('../assets/producto.png'),
-                nombreProducto:"Taladro percutor",
-                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
-                precio: "$ 200.000"
-            },
-            {
-                img: require('../assets/producto.png'),
-                nombreProducto:"Taladro percutor",
-                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
-                precio: "$ 200.000"
-            },
-            {
-                img: require('../assets/producto.png'),
-                nombreProducto:"Taladro percutor",
-                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
-                precio: "$ 200.000"
-            },
-            {
-                img: require('../assets/producto.png'),
-                nombreProducto:"Taladro percutor",
-                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
-                precio: "$ 200.000"
-            },
-            {
-                img: require('../assets/producto.png'),
-                nombreProducto:"Taladro percutor",
-                descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
-                precio: "$ 200.000"
-            }     
-            ],
+        data() {
+            return {
+                articulosTabla: [],
+                productosArray : [
+                {
+                    img: require('../assets/producto.png'),
+                    nombreProducto:"Taladro percutor",
+                    descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                    precio: "$ 200.000"
+                },
+                {
+                    img: require('../assets/producto.png'),
+                    nombreProducto:"Taladro percutor",
+                    descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                    precio: "$ 200.000"
+                },
+                {
+                    img: require('../assets/producto.png'),
+                    nombreProducto:"Taladro percutor",
+                    descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                    precio: "$ 200.000"
+                },
+                {
+                    img: require('../assets/producto.png'),
+                    nombreProducto:"Taladro percutor",
+                    descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                    precio: "$ 200.000"
+                },
+                {
+                    img: require('../assets/producto.png'),
+                    nombreProducto:"Taladro percutor",
+                    descripcionProducto: "Taladro Percutor 1/2 pul 650w 3150RPM 47250GPM",
+                    precio: "$ 200.000"
+                }     
+                ],
+            }
+        },
+        created(){
+            this.listarArticulos();
+        },
+        methods: {
+                listarArticulos(){
+                this.axios.get('/listar-articulos')
+                    .then((response)=>{
+                        this.articulosTabla = response.data;
+                        console.log(this.articulosTabla)
+                    })
+                    .catch(e=>{
+                    console.log(e.response);
+                })
+            } 
         }
-    },
-    methods: {
-
-    },
     }
 </script>
