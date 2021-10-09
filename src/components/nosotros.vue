@@ -32,3 +32,10 @@
             </section>
         </main>
 </template>
+
+<style>
+    main{
+        margin: 6%;
+
+    }
+</style>
