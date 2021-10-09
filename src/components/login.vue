@@ -1,21 +1,23 @@
 <template>
   <div class= "container">
       <section class="col-9 col-lg-4 mx-auto">
-        <form action="formulario" method="POST">
+        <form @submit.prevent= "comprobarUsuario">
               <div class="contenedor">
                   <h1>Iniciar sesión</h1>
                   <div class="element">
                       <div class="label"><label for="email">Correo</label></div>
-                      <input id="email" type="text" name="email" placeholder="Escribe tu correo"><br/>
+                      <input id="email" type="text" name="email" placeholder="Escribe tu correo" v-model= "usuario"><br/>
                   </div>
                   <div class="element">
                       <div class="label"><label for="password">Contraseña</label></div>
-                      <input id="password" type="password" name="password" placeholder="Escribe tu Contraseña"><br/>
+                      <input id="password" type="password" name="password" placeholder="Escribe tu Contraseña" v-model= "contraseña"><br/>
                   </div>
-                  <br/>
-                  <router-link to="/dashusers">
-                  <input class="btn btn-primary" type="submit" value="Iniciar sesión"/>
-                  </router-link>
+                  <div class="element">
+                      <p class="text-dark">{{mensaje}}</p>
+                  </div>
+                  <!-- <router-link to="/dashusers"> -->
+                  <input id="boton" class="btn btn-primary" type="submit" value="Iniciar sesión">
+                  <!-- </router-link> -->
               </div>
           </form>
           <!-- <b-form @submit="onSubmit" @reset="onReset" v-if="show">
@@ -70,4 +72,43 @@
   </div>
 </template>
 
-
+<script>
+export default {
+    data(){
+        return{
+            usuario: "",
+            contraseña: "",
+            mensaje:" ",
+            usuariosTabla: []
+        }
+    },
+    created(){
+        this.listarUsuarios();
+    },
+    methods:{
+        listarUsuarios(){
+            this.axios.get('/listar-usuarios')
+                .then((response)=>{
+                    this.usuariosTabla = response.data;
+                })
+                .catch(e=>{
+                console.log(e.response);
+            })
+        },
+        comprobarUsuario(){
+            this.usuariosTabla.forEach((value)=>{
+                if(this.usuario == value.user & this.contraseña == value.pass){
+                    this.mensaje = "Usuario existente con contraseña";
+                    this.$router.push({path: "/dashproducts"})
+                }
+                else if(this.usuario == value.user & this.contraseña != value.pass){
+                    this.mensaje = "La contraseña que ingresaste es incorrecta"
+                }
+                else{
+                    this.mensaje= "El usuario no existe"
+                }
+            });
+        }
+    }
+}
+</script>
