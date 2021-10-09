@@ -28,7 +28,7 @@
                 </section>
             </div>
             <div class="tab-content">
-                <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
+                <div id="todos" role="tabpanel" aria-labelledby="todos-tab"> <!-- class="tab-pane fade show active" -->
                     <section class="row">
                         <div v-for = "item in articulosArray" :key= "item.id" class="col-6 mt-5">
                             <div class="card m-auto shadow" style="width: 400px;">
