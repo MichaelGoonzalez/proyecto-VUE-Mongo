@@ -30,14 +30,14 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for = "item in articulosArray" :key= "item.id" class="col-6 mt-5">
-                            <div class="card m-auto shadow" style="width: 400px;">
+                        <div v-for = "item in articulosArray" :key= "item.id" class="col-12 col-lg-4 mt-5">
+                            <div class="card m-auto shadow" style="width: 340px">
                                 <img v-bind:src= "item.img" class="card-img-top" alt="Imagen articulo">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                     <h5 class="card-title text-black">{{item.titulo}}</h5>
                                     <p class="card-text text-black">
-                                        {{item.descripcion}}<a href="#" class="text-danger">Leer más ...</a>
+                                        {{item.descripcion}}<a href="#" class="text-danger">Leer más...</a>
                                     </p>
                                 </div>
                             </div>
