@@ -1,5 +1,5 @@
 <template>
-    <main class="container">
+    <div class="container">
             <section class="row d-flex">
                 <div class="col-10 col-lg-5 mx-auto">
                     <form action="server" method="POST">
@@ -40,5 +40,5 @@
                     </aside>
                 </div>
             </section>
-    </main>
+    </div>
 </template>

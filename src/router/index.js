@@ -5,7 +5,6 @@ import Nosotros from '../components/nosotros.vue'
 import Productos from '../components/productos.vue'
 import Articulos from "../components/articulos.vue"
 import Contacto from "../components/contacto.vue"
-import Admin from '../components/admin.vue'
 import Login from '../components/login.vue'
 import Users from '../components/admin/dashusers.vue'
 import DashProducts from '../components/admin/dashproducts.vue'
@@ -19,7 +18,6 @@ const routes = [
     { path: '/productos', component: Productos},
     { path: '/articulos', component: Articulos},
     { path: '/contacto', component: Contacto},
-    { path: '/admin', component: Admin},
     { path: '/login', component: Login},
     { path: '/dashusers', component: Users},
     { path: '/dashproducts', component: DashProducts},
