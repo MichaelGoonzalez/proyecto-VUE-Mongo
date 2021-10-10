@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 barra2">
                 <img class="image" src="/img/logo.png" alt="">
@@ -18,32 +18,36 @@
                 </ul>
             </div>
         </div>
-    </div> 
+    </div>  -->
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="barra-lateral col-md-2 col-sm-auto">
-                <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
-                    <router-link to="/dashusers"><i class="fas fa-user-friends"></i><span>Usuarios</span></router-link>
-                    <router-link to="/dashproducts"><i class="fas fa-store"></i><span>Productos</span></router-link>
-                    <router-link to="/dashcategories"><i class="fas fa-clipboard-list"></i><span>Categorias</span></router-link>
-                </nav>
-            </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="barra-lateral col-md-2 col-sm-auto">
+                    <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
+                        <router-link style="text-decoration:none" to="/dashusers">
+                            <i class="fas fa-user-friends"></i><span>Usuarios</span>
+                        </router-link>
+                        <router-link style="text-decoration:none" to="/dashproducts">
+                            <i  class="fas fa-store"></i><span>Productos</span>
+                        </router-link>
+                        <router-link  style="text-decoration:none" to="/"><i class="fas fa-sign-out-alt m-1"></i>Salir</router-link>
+                    </nav>
+                </div>
             <main class="main col">
                 <div class="row justify-content-center align-content-center text-center d-flex">
                     <div class="col-md-6">
                         <form action="crear-usuarios">
                             <div class="contenedor">
-                                <h1>Crear usuario</h1>
+                                <h1>Crear un nuevo usuario</h1>
                                 <div class="element">
-                                    <div class="label"><label for="name">Nombre</label></div>
+                                    <div class="label"><label for="name">Usuario</label></div>
                                     <input id="name" type="text" placeholder="Escriba el nombre de usuario"><br/>
                                 </div>
                                 <div class="element">
-                                    <div class="label"><label for="email">Correo</label></div>
-                                    <input id="email" type="email" placeholder="Escriba el correo electrónico"><br/>
+                                    <div class="label"><label for="email">Contraseña</label></div>
+                                    <input id="password" type="text" placeholder="Escriba la contraseña"><br/>
                                 </div>
-                                <input class="btn" type="submit" value="Crear usuario"/>
+                                <input class="btn btn-primary" type="submit" value="Agregar"/>
                             </div>
                         </form>
                     </div>

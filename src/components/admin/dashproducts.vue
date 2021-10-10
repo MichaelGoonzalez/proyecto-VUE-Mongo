@@ -10,6 +10,7 @@
                         <router-link style="text-decoration:none" to="/dashproducts">
                             <i  class="fas fa-store"></i><span>Productos</span>
                         </router-link>
+                        <router-link style="text-decoration:none" to="/"><i class="fas fa-sign-out-alt m-1"></i>Salir</router-link>
                     </nav>
                 </div>
 
