@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <main class="container my-5">
             <div class="row">
@@ -43,7 +42,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for= "item in articulosTabla" :key= "item.id" class="col-3 mt-5">
+                        <div v-for= "item in articulosTabla" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;height: 330px">
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" width="200px" height="200px" >
                                 <div class="card-body border-top text-start">
@@ -59,7 +58,7 @@
                 </div>
                 <div class="tab-pane fade" id="materiales" role="tabpanel" aria-labelledby="materiales-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" :key= "item.id" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src= "item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -75,7 +74,7 @@
                 </div>
                 <div class="tab-pane fade" id="electricos" role="tabpanel" aria-labelledby="electricos-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" :key= "item.id1" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id1" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">
@@ -91,7 +90,7 @@
                 </div>
                 <div class="tab-pane fade" id="maderas" role="tabpanel" aria-labelledby="maderas-tab">
                     <section class="row">
-                        <div v-for= "item in productosArray" :key= "item.id3" class="col-3 mt-5">
+                        <div v-for= "item in productosArray" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src="item.img" class="card-img-top" alt="Imagen producto">
                                 <div class="card-body border-top text-start">

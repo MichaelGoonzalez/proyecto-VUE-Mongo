@@ -108,7 +108,6 @@ export default {
     data(){
         return{
             articulosTabla: [],
-
             atributos: {
                 codigo: "",
                 nombre: "",
@@ -117,7 +116,6 @@ export default {
                 fecha: "",
                 descripcion: ""
             },
-
             respuesta: ""
         }
     },
