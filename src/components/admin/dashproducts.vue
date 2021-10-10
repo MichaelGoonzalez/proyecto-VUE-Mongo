@@ -4,10 +4,12 @@
             <div class="row">
                 <div class="barra-lateral col-md-2 col-sm-auto">
                     <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
-                        
-                        <a href="#"><i class="fas fa-user-friends"></i><span>Usuarios</span></a>
-                        <a href="#"><i class="fas fa-store"></i><span>Productos</span></a>
-                        <a href="#"><i class="fas fa-clipboard-list"></i><span>Categorias</span></a>
+                        <router-link style="text-decoration:none" to="/dashusers">
+                            <i class="fas fa-user-friends"></i><span>Usuarios</span>
+                        </router-link>
+                        <router-link style="text-decoration:none" to="/dashproducts">
+                            <i  class="fas fa-store"></i><span>Productos</span>
+                        </router-link>
                     </nav>
                 </div>
 
@@ -152,3 +154,9 @@ export default {
     }
 }
 </script>
+
+<style>    
+    #nav a.router-link-exact-active {
+        color: #f6821f;
+    }
+</style>
