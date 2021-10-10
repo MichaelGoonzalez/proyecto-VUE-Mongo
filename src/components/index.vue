@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-black bg-opacity-50 bg-cover bg-filter"></div>  
-    <div class="bg-cover" v-bind:style="{ backgroundImage: 'url(' + require('../assets/background.jpeg')+')' }"></div>
+    <div class="bg-cover" v-bind:style="{ backgroundImage: 'url(' + require('../assets/bg3.jpg')+')' }"></div>
     <div class="container">
               <section class="row d-flex justify-content-evenly ">
                   <div class="col-lg-4 my-auto">
