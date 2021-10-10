@@ -71,7 +71,9 @@
                     
 
                 },
+
                 {
+                    url: "https://www.larepublica.co/empresas/el-gran-salon-ferretero-contara-con-50-expositores-y-espera-reactivar-esta-industria-3244525",
                     img: require('../assets/ferretero-01.jpg'),
                     clase: "Noticias",
                     titulo: "El Gran Salón Ferretero contará con 50 expositores y espera reactivar esta industria",
@@ -88,7 +90,7 @@
 
                 },
                 {
-                    
+                    url:"https://mejorconsalud.as.com/hacer-mesa-auxiliar/",
                     img: require('../assets/mesa.jpg'),
                     clase: "Tutorial",
                     titulo: "¿Cómo hacer una mesa auxiliar?",
