@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background-color:#f1f1f1">
     <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 barra2">
@@ -34,16 +34,16 @@
                     </nav>
                 </div>
             <main class="main col">
-                <div class="row justify-content-center align-content-center text-center d-flex">
-                    <div class="col-md-6">
+                <div class="container">
+                    <div class="col-12 col-lg-8 mx-auto">
                         <form action="crear-usuarios">
                             <div class="contenedor">
                                 <h1>Crear un nuevo usuario</h1>
-                                <div class="element">
+                                <div class="element mb-3">
                                     <div class="label"><label for="name">Usuario</label></div>
                                     <input id="name" type="text" placeholder="Escriba el nombre de usuario"><br/>
                                 </div>
-                                <div class="element">
+                                <div class="element mb-3">
                                     <div class="label"><label for="email">Contraseña</label></div>
                                     <input id="password" type="text" placeholder="Escriba la contraseña"><br/>
                                 </div>

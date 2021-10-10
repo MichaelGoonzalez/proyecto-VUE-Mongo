@@ -8,7 +8,6 @@ import Contacto from "../components/contacto.vue"
 import Login from '../components/login.vue'
 import Users from '../components/admin/dashusers.vue'
 import DashProducts from '../components/admin/dashproducts.vue'
-import Categorias from '../components/admin/dashcategories.vue'
 
 Vue.use(VueRouter)
 
@@ -20,8 +19,7 @@ const routes = [
     { path: '/contacto', component: Contacto},
     { path: '/login', component: Login},
     { path: '/dashusers', component: Users},
-    { path: '/dashproducts', component: DashProducts},
-    { path: '/dashcategories', component: Categorias}
+    { path: '/dashproducts', component: DashProducts}
 ]
 
 const router = new VueRouter({

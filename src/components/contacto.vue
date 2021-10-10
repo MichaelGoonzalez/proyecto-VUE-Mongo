@@ -4,16 +4,16 @@
                 <div class="col-10 col-lg-5 mx-auto">
                     <form action="server" method="POST">
                         <div class="contacto">
-                            <h2>Contáctanos</h2>
-                            <div class="element">
+                            <h2 class="mt-3">Contáctanos</h2>
+                            <div class="element mb-3">
                                 <div class="label"><label for="asunto">Asunto</label></div>
                                 <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto..." required="true"/>
                             </div>
-                            <div class="element">
+                            <div class="element mb-3">
                                 <div class="label"><label for="email">Correo</label></div>
                                 <input type="email" id="email" name="email" placeholder="Escribe tu correo..." required="true"/>
                             </div>
-                            <div class="element">        
+                            <div class="element mb-3">        
                                 <div class="label"><label for="comment">Mensaje</label></div>
                                 <textarea id="comment" name="comment" rows="2" placeholder="Escribe tu mensaje aquí..." required="true"></textarea>
                             </div>
@@ -24,12 +24,12 @@
                 </div>
                 <div class="col-12 col-lg-6 mx-auto">
                     <aside id="info">
-                        <article>
+                        <article class="mt-3">
                             <h2>Visítanos</h2>
                             <p>CL 14D #43A-34 Manzanares I<br/>Poblado campestre, Candelaria<Br/>Cali, Colombia</p>
                         </article>
                         <br/>
-                        <article>
+                        <article class="mb-2">
                             <h2>Síguenos</h2>
                             <div class="mx-auto">
                                 <a href="https://www.facebook.com/Carvajalmateriales"><i class="fab fa-facebook" style="color:blue"></i></a><p class="d-inline" style="color:black"> Facebook</p><br/>

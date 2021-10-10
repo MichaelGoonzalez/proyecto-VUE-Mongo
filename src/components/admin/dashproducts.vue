@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="background-color:#f1f1f1">
         <div class="container-fluid">
             <div class="row">
                 <div class="barra-lateral col-md-2 col-sm-auto">
