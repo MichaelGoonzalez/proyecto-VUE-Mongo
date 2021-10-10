@@ -38,7 +38,7 @@
                     <div class="col-12 col-lg-8 mx-auto">
                         <form action="crear-usuarios">
                             <div class="contenedor">
-                                <h1>Crear un nuevo usuario</h1>
+                                <h2>Crear un nuevo usuario</h2>
                                 <div class="element mb-3">
                                     <div class="label"><label for="name">Usuario</label></div>
                                     <input id="name" type="text" placeholder="Escriba el nombre de usuario"><br/>

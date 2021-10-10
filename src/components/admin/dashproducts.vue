@@ -15,10 +15,10 @@
                 </div>
 
                 <main class="main col">
-                    <div class="row justify-content-center align-content-center text-center d-flex">
-                    <div class="col-md-6 my-auto">
+                    <div class="row justify-content align-content-center text-center d-flex">
+                    <div class="col-md-5 mx-auto">
                         <div class="contenedor">
-                            <h2> <font size= "15"><b>Crear Producto</b> </font></h2>
+                            <h2>Crear Producto</h2>
                             <form @submit.prevent="agregarArticulo"> 
                                 <div class="element">
                                     <div class="label"><label for="producto" class="form-label text-dark">Nombre</label></div>
@@ -29,8 +29,8 @@
                                 <div class="element">
                                     <div class="label"><label for="categoria" class="form-label text-dark">Categoría</label></div>
                                     <select class="form-select" aria-label="Default select example" required v-model="atributos.categoria">
-                                        <option selected>One</option>
-                                        <option >Two</option>
+                                        <option selected>Maderas</option>
+                                        <option >Eléctricos</option>
                                         <option >Three</option>
                                     </select>
                                     <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
@@ -55,21 +55,22 @@
                                         <div class="label"><label for="articulodescripcion" class="form-label text-dark">Descripción</label></div>
                                         <textarea class="form-control" id="articulodescripcion" rows="3" v-model="atributos.descripcion"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Agregar</button>
+                                <button type="submit" class="btn btn-primary mt-4">Agregar</button>
                             </form>
                             <b class="text-danger">{{respuesta}}</b>
                         </div>
                     </div>
-                        <div class="col-md-6">
-                            <h2><font size= "15"><b>Lista de productos</b> </font></h2>
+                        <div class="col-md-5 mx-auto">
+                            <div class="contenedor">
+                            <h2>Lista de productos</h2>
                             <form>
-                                <div class="mb-3">
-                                <label for="producto" class="form-label text-dark" > <b>Nombre del producto</b></label>
+                                <div class="element">
+                                <div class="label"><label for="producto" class="form-label text-dark" >Nombre del producto</label></div>
                                 <input type="text" class="form-control" id="producto" aria-describedby="productoactual">
                                 <div id="emailHelp" class="form-text"></div>
                                 </div>
-                                <div class="mb-3">
-                                <label for="codeproduct" class="form-label text-dark"> <b>Código del roducto </b></label>
+                                <div class="element">
+                                <div class="label"><label for="codeproduct" class="form-label text-dark">Código del producto</label></div>
                                 <input type="text" class="form-control" id="codeproduct">
                                 </div>
                                 <br>
@@ -95,6 +96,7 @@
                                             </tbody>
                                         </table>    
                                     </div>
+                                </div>
                                 </div>
                         </div>                   
                     </div>    

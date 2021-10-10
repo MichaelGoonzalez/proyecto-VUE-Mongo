@@ -3,7 +3,7 @@
         <section class="col-9 col-lg-4 mx-auto">
             <form @submit.prevent= "comprobarUsuario" method="POST">
                 <div class="contenedor">
-                    <h1>Acceso a Dashboard</h1>
+                    <h2>Acceso a Dashboard</h2>
                     <div class="element">
                         <div class="label"><label for="email">Usuario</label></div>
                         <input id="usuario" type="text" name="usuario" placeholder="Escriba su usuario" v-model= "usuario"><br/>
