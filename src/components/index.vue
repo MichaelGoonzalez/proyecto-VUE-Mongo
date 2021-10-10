@@ -11,7 +11,7 @@
                           materiales de construcción para que cumplas tus 
                           proyectos de remodelación para tu hogar y productos de 
                           ferretería en general.
-                          Ven a conocernos  y contruyamos juntos!!
+                          ¡¡Ven a conocernos y contruyamos juntos!!
 
                       </p>           
                       <router-link to="/productos" class="btn btn-primary">Ver productos</router-link>     
