@@ -96,12 +96,11 @@
                     
                 },
                 {
+                    url:"https://mejorconsalud.as.com/consejos-utiles-casa-alquiler/",
                     img: require('../assets/tutorial.png'),
                     clase: "Consejos",
                     titulo: "5 consejos útiles si deseas poner tu casa en alquiler",
-                    descripcion: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum qui vero dignissimos" 
-                    +"provident, fuga cum illum eos voluptate rerum, est ipsam eum nesciunt? Sequi explicabo ipsam illum"
-                    +"laborum culpa!"
+                    descripcion: "¿Estás pensando en la posibilidad de que tu propiedad genere un beneficio económico? Entendemos que alquilar tu inmueble puede parecer una tarea un tanto compleja, por lo que queremos compartir contigo algunos consejos útiles si deseas poner tu casa en alquiler. Por otro lado, tener una vivienda vacía que solo ocasione gastos tampoco es una buena idea." + "     "+ " En este sentido, cuando alquilas tu casa estás recuperando una inversión y estás dándole a otra persona la oportunidad de acceder a una vivienda rentada."+"  " + "Si tomas todos los recaudos necesarios y te asesoras sobre tarifas, condiciones y demás aspectos legales, el alquiler de tu propiedad puede traerte grandes beneficios."
 
                 },
             ]
