@@ -107,6 +107,12 @@
 
 <script>
 export default {
+    beforeCreate(){
+        var autenticacion = window.localStorage.getItem("autenticacion");
+        if(autenticacion !== "ok"){
+            this.$router.push({path: "/login"})
+        }
+    },
     data(){
         return{
             articulosTabla: [],
