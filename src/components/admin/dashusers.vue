@@ -24,13 +24,13 @@
             <div class="row">
                 <div class="barra-lateral col-md-2 col-sm-auto">
                     <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
-                        <router-link style="text-decoration:none" to="/dashusers">
+                        <router-link class="text-decoration-none" to="/dashusers">
                             <i class="fas fa-user-friends"></i><span>Usuarios</span>
                         </router-link>
-                        <router-link style="text-decoration:none" to="/dashproducts">
+                        <router-link class="text-decoration-none" to="/dashproducts">
                             <i  class="fas fa-store"></i><span>Productos</span>
                         </router-link>
-                        <router-link  style="text-decoration:none" to="/"><i class="fas fa-sign-out-alt m-1"></i>Salir</router-link>
+                        <router-link  class="text-decoration-none" to="/"><i class="fas fa-sign-out-alt m-1"></i>Salir</router-link>
                     </nav>
                 </div>
             <main class="main col">

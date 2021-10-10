@@ -119,16 +119,12 @@ body {
     color: black;
 }
 
+
 .contenedor .element input {
-    width: 101%;
-    padding: 3px;
-    border-radius: 8px;
-    border: 1.5px #cdc solid;
-}
-.btn{
-    color: #cdc;
-    background: #4160af;
-    border-radius: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.5px #cdc solid;
 }
 
 /*mediaquerys*/
@@ -173,11 +169,11 @@ body {
         width: 100%;
     }
 
-    body {
+    /* body {
         background: #D3D3D3;
         font-size: 16px;
         overflow: visible;
-    }
+    } */
 }
 
 

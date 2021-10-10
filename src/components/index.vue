@@ -16,9 +16,9 @@
                       </p>           
                       <router-link to="/productos" class="btn btn-primary">Ver productos</router-link>     
                   </div>
-                  <div class="col-4 my-auto d-none d-lg-block">
+                  <!-- <div class="col-4 my-auto d-none d-lg-block">
                       <img src="../assets/imgIndex.png" width="100%" alt="imagen">
-                  </div>
+                  </div> -->
               </section>
     </div>
   </div>  
