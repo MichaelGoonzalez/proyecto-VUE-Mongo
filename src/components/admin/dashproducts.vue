@@ -92,6 +92,12 @@
                                                     <td>{{item.codigo}}</td>
                                                     <td>{{item.nombre}}</td>
                                                     <td>{{item.cantidad}}</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-warning">Editar</button> 
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger" @click="eliminarArticulo(item._id)">Eliminar</button>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>    
@@ -159,6 +165,17 @@ export default {
                 console.log(e.response);
             })
         },
+        eliminarArticulo(id){
+            
+            this.axios.delete(`/borrar-articulo/${id}`)
+            .then(res=>{
+                const index = this.articulosTabla.findIndex(item=> item._id ===res.data._id);
+                this.articulosTabla.splice(index,1);
+            })
+            .catch(e=>{
+                console.log(e.response)
+            })
+        }
     }
 }
 </script>
@@ -166,5 +183,8 @@ export default {
 <style>    
     #nav a.router-link-exact-active {
         color: #f6821f;
+    }
+     #eliminar{
+        background: #dc3545;
     }
 </style>

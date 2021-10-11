@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div id="contenedor" class="container">
             <div class="row">
                 <section class="col-md-10 mx-auto">
                     <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
@@ -113,3 +113,9 @@
     },
     }
 </script>
+
+<style>
+    #contenedor{
+        margin: 5%;
+    }
+</style>

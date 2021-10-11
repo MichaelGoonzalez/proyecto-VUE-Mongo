@@ -43,4 +43,29 @@ router.get('/listar-usuarios', async(req, res) => {
     }
 });   
 
+router.delete('/borrar-articulo/:id', async(req,res)=>{
+
+
+    const _id=req.params.id;
+
+    try {
+
+        const articulosDB  =await Articulos.findByIdAndDelete({_id});
+        if(!articulosDB){ 
+            return res.status(400).json({ 
+                mensaje: 'No se encontró el id indicado' 
+            }) 
+        } 
+        res.json(articulosDB);
+        
+    } catch (error) {
+
+        return res.status(500).json({
+
+            mensaje:'Ocurrio un error',
+            error
+        })  
+    }
+});
+
 module.exports = router;
