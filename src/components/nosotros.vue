@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="contenedor">
             <section class="row d-flex justify-content-evenly text-black">
                 <div class="col-md-5 my-auto text-start">
                     <h1 class="color-marca">¿Quiénes somos?</h1>
@@ -32,3 +32,9 @@
             </section>
         </div>
 </template>
+
+<style>
+    .contenedor{
+        margin: 5%
+    }
+</style>
