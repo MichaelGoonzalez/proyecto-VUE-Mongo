@@ -7,7 +7,7 @@ const app = express();
 
 //CONEXION A BASE DE DATOS
 const mongoose = require('mongoose');
-const uri = 'mongodb://localhost:27017/ferreteriaCarvajal';
+const uri = "mongodb+srv://root:holamundo951@cluster0.oyreu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 
 mongoose.connect(uri, options).then(
