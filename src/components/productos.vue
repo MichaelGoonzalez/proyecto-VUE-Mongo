@@ -44,7 +44,7 @@
                     <section class="row">
                         <div v-for= "item in articulosTabla" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" width="200px" height="200px" >
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
                                     <p class="card-text text-black review__item__text">
@@ -60,7 +60,7 @@
                     <section class="row">
                         <div v-for= "item in forHogar" :key= "item.id"  class="col-12 col-md-4 col-lg-3 mt-5">
                             <div  class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto">
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
                                     <p class="card-text text-black review__item__text">
@@ -76,10 +76,10 @@
                     <section class="row">
                         <div v-for= "item in forElectricos" :key= "item.id1" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto">
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto"> 
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
-                                    <p maxlength="10" class="card-text text-black">
+                                    <p maxlength="10" class="card-text text-black review__item__text">
                                         {{item.descripcion}}
                                     </p>
                                     <h5 class="card-title text-black review__item__text">{{item.precio}}</h5>
@@ -92,7 +92,7 @@
                     <section class="row">
                         <div v-for= "item in forHerramientas" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto">
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
                                     <p class="card-text text-black review__item__text">
@@ -108,7 +108,7 @@
                     <section class="row">
                         <div v-for= "item in forOtros" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto">
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.nombre}}</h6>
                                     <p class="card-text text-black review__item__text">
@@ -165,9 +165,6 @@
 </script>
 
 <style>
-    #contenedor{
-        margin: 5%;
-    }
     .review__item__text{
         cursor: pointer;
         display: -webkit-box;
@@ -179,5 +176,9 @@
     .review__item__text:hover{
         cursor: default;
         display: block;
+    }
+    #imagenes-producto{
+        width: 200px;
+        height: 200px;
     }
 </style>
