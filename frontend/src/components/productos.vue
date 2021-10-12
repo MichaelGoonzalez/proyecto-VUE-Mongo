@@ -19,15 +19,12 @@
                             <a class="nav-link" id="maderas-tab" data-bs-toggle="tab" data-bs-target="#maderas"
                                 type="button" role="tab" aria-controls="maderas" aria-selected="true">Herramientas</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item">
                             <a class="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
                                 type="button" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
                         </li>
-                        <li class="nav-item">
-                            <form class="d-flex justify-content-end mx-auto">
+                        <li class="nav-item" style="margin-left: 4%">
                                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "nombreProducto">
-                                <!-- <button class="btn btn-outline-success" type="submit">Buscar</button> -->
-                            </form>
                         </li>
                     </ul>
                 </section>
@@ -142,7 +139,7 @@
         computed:{
             filtrarAritculos: function(){
                 return this.articulosTabla.filter((item)=>{
-                    return item.nombre.match(this.nombreProducto);
+                    return item.nombre.match(this.nombreProducto.toUpperCase());
                 })
             },
             forHogar: function(){

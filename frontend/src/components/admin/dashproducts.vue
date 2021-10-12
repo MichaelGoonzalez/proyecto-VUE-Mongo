@@ -18,8 +18,8 @@
                     <div class="row justify-content align-content-center text-center d-flex">
                     <div class="col-md-5 mx-auto">
                         <div class="contenedor">
-                            <h2>Crear Producto</h2>
                             <form @submit.prevent= "agregarArticulo"> 
+                                <h2>Crear Producto</h2>
                                 <div class="element">
                                     <div class="label"><label for="producto" class="form-label text-dark">Nombre</label></div>
                                     <input type="text" class="form-control" id="producto" aria-describedby="productoactual" v-model="atributos.nombre">
@@ -55,21 +55,23 @@
                                         <div class="label"><label for="articulodescripcion" class="form-label text-dark">Descripción</label></div>
                                         <textarea class="form-control" id="articulodescripcion" rows="3" v-model="atributos.descripcion"></textarea>
                                 </div>
+                                <div class="elment">
+                                    <br>
+                                    <b class="text-danger">{{respuesta}}</b>
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-4">Agregar</button>
+                                
                             </form>
-                            <b class="text-danger">{{respuesta}}</b>
                         </div>
                     </div>
-                        <div class="col-md-5 mx-auto">
+                        <div class="col-md-6 mx-auto">
                             <div class="contenedor">
                                 <h2>Lista de productos</h2>
-                                <form >
-                                    <div class="element">
-                                    <div class="label"><label for="codeproduct" class="form-label text-dark">Código del producto</label></div>
+                                <div class="element">
+                                <div class="label"><label for="codeproduct" class="form-label text-dark">Código del producto</label></div>
                                     <input type="text" class="form-control" id="codeproduct" v-model= "codigoProducto" autocomplete="off">
                                     <br>
-                                    </div>                
-                                </form>
+                                </div>                
                                 <div class="mb-3">
                                         <div class="table-responsive">
                                             <table class="table table-striped table-hover ">
