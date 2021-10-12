@@ -16,7 +16,7 @@
                         <div class="d-flex">
                             <ul id="nav" class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <router-link to="/" class="nav-link" active-class="" aria-current="page">Inicio</router-link>
+                                    <router-link to="/" class="nav-link" aria-current="page" exact-active-class="active color-marca" >Inicio</router-link>
                                     <!-- <a class="nav-link active color-marca" aria-current="page"
                                         href="/html/index.html">Inicio</a> -->
                                 </li>
