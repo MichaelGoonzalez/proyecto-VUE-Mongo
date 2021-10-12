@@ -76,4 +76,16 @@ router.delete('/borrar-articulo/:id', async(req,res)=>{
     }
 });
 
+router.get('/listar-usuarios', async(req, res) => {
+    try {
+    const usuariosDB = await Usuarios.find();
+    res.json(usuariosDB);
+    } catch (error) {
+        return res.status(400).json({
+        mensaje: 'Ocurrio un error',
+        error
+        })
+    }
+});   
+
 module.exports = router;
