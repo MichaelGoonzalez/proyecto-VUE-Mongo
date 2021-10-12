@@ -19,7 +19,7 @@
                     <div class="col-md-5 mx-auto">
                         <div class="contenedor">
                             <h2>Crear Producto</h2>
-                            <form @submit.prevent="agregarArticulo"> 
+                            <form @submit.prevent= "agregarArticulo"> 
                                 <div class="element">
                                     <div class="label"><label for="producto" class="form-label text-dark">Nombre</label></div>
                                     <input type="text" class="form-control" id="producto" aria-describedby="productoactual" v-model="atributos.nombre">
@@ -62,48 +62,41 @@
                     </div>
                         <div class="col-md-5 mx-auto">
                             <div class="contenedor">
-                            <h2>Lista de productos</h2>
-                            <form>
-                                <div class="element">
-                                <div class="label"><label for="producto" class="form-label text-dark" >Nombre del producto</label></div>
-                                <input type="text" class="form-control" id="producto" aria-describedby="productoactual">
-                                <div id="emailHelp" class="form-text"></div>
-                                </div>
-                                <div class="element">
-                                <div class="label"><label for="codeproduct" class="form-label text-dark">Código del producto</label></div>
-                                <input type="text" class="form-control" id="codeproduct">
-                                </div>
-                                <br>
-                                    <button type="submit" class="btn btn-primary">Buscar Producto</button>
+                                <h2>Lista de productos</h2>
+                                <form >
+                                    <div class="element">
+                                    <div class="label"><label for="codeproduct" class="form-label text-dark">Código del producto</label></div>
+                                    <input type="text" class="form-control" id="codeproduct" v-model= "codigoProducto" autocomplete="off">
+                                    <br>
+                                    </div>                
                                 </form>
-                                <br> 
                                 <div class="mb-3">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-hover ">
-                                            <thead class="thead-dark">
-                                                <tr>
-                                                    <th>Código</th>
-                                                    <th>Nombre Producto</th>
-                                                    <th>Stock</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr v-for= "(item,index) in articulosTabla" :key= "index">
-                                                    <td>{{item.codigo}}</td>
-                                                    <td>{{item.nombre}}</td>
-                                                    <td>{{item.cantidad}}</td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-warning">Editar</button> 
-                                                    </td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-danger" @click="eliminarArticulo(item._id)">Eliminar</button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>    
-                                    </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-striped table-hover ">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th>Código</th>
+                                                        <th>Nombre Producto</th>
+                                                        <th>Stock</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr v-for= "(item,index) in filtrarAritculos" :key= "index">
+                                                        <td>{{item.codigo}}</td>
+                                                        <td>{{item.nombre}}</td>
+                                                        <td>{{item.cantidad}}</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-warning">Editar</button> 
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-danger" @click="eliminarArticulo(item._id)">Eliminar</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>    
+                                        </div>
                                 </div>
-                                </div>
+                            </div>
                         </div>                   
                     </div>    
                 </main>
@@ -132,6 +125,7 @@ export default {
                 fecha: "",
                 descripcion: ""
             },
+            codigoProducto: "",
             respuesta: ""
         }
     },
@@ -176,6 +170,13 @@ export default {
                 console.log(e.response)
             })
         }
+    },
+    computed:{
+        filtrarAritculos: function(){
+            return this.articulosTabla.filter((item)=>{
+                return item.codigo.match(this.codigoProducto);
+            })
+        }
     }
 }
 </script>
@@ -184,7 +185,7 @@ export default {
     #nav a.router-link-exact-active {
         color: #f6821f;
     }
-     #eliminar{
+    #eliminar{
         background: #dc3545;
     }
 </style>

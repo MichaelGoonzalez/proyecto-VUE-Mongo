@@ -31,17 +31,25 @@ router.get('/listar-articulos', async(req, res) => {
     }
 });   
 
-router.get('/listar-usuarios', async(req, res) => {
+router.get('/buscar-articulo/:id', async(req, res) => {
+
+    const codigo = req.params.id;
+
     try {
-    const usuariosDB = await Usuarios.find();
-    res.json(usuariosDB);
-    } catch (error) {
-        return res.status(400).json({
-        mensaje: 'Ocurrio un error',
-        error
+        const articulosDB = await Articulos.findOne({codigo});
+        res.json(articulosDB)
+        
+    }catch (error) {
+
+        return res.status(500).json({
+
+            mensaje:'Ocurrio un error',
+            error
         })
-    }
+        
+    } 
 });   
+
 
 router.delete('/borrar-articulo/:id', async(req,res)=>{
 

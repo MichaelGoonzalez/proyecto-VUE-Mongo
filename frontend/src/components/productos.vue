@@ -20,19 +20,12 @@
                                 type="button" role="tab" aria-controls="maderas" aria-selected="true">Herramientas</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <!-- <a class="nav-link dropdown-toggle" id="dropdown-categorias" data-bs-toggle="dropdown"
-                                href="#" role="button" aria-expanded="false">Más categorías</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown-categorias">
-                                <li><a class="dropdown-item" href="#">Opción 1</a></li>
-                                <li><a class="dropdown-item" href="#">Opción 2</a></li>
-                                <li><a class="dropdown-item" href="#">Opción 3</a></li>
-                            </ul> -->
                             <a class="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
                                 type="button" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
                         </li>
                         <li class="nav-item">
                             <form class="d-flex justify-content-end mx-auto">
-                                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "nombreProducto">
                                 <!-- <button class="btn btn-outline-success" type="submit">Buscar</button> -->
                             </form>
                         </li>
@@ -42,7 +35,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for= "item in articulosTabla" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
+                        <div v-for= "item in filtrarAritculos" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
@@ -129,6 +122,7 @@
         data() {
             return {
                 articulosTabla: [],
+                nombreProducto: ""
             }
         },
         created(){
@@ -139,7 +133,6 @@
                 this.axios.get('/listar-articulos')
                     .then((response)=>{
                         this.articulosTabla = response.data;
-                        console.log(this.articulosTabla)
                     })
                     .catch(e=>{
                     console.log(e.response);
@@ -147,6 +140,11 @@
             } 
         },
         computed:{
+            filtrarAritculos: function(){
+                return this.articulosTabla.filter((item)=>{
+                    return item.nombre.match(this.nombreProducto);
+                })
+            },
             forHogar: function(){
                 return this.articulosTabla.filter(i => i.categoria === 'Hogar')
             },
