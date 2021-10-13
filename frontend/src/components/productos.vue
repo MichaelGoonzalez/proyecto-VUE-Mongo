@@ -20,6 +20,10 @@
                                 type="button" role="tab" aria-controls="maderas" aria-selected="true">Herramientas</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" id="tuberias-tab" data-bs-toggle="tab" data-bs-target="#tuberias"
+                                type="button" role="tab" aria-controls="tuberias" aria-selected="true">Tuberias</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
                                 type="button" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
                         </li>
@@ -81,6 +85,22 @@
                 <div class="tab-pane fade" id="maderas" role="tabpanel" aria-labelledby="maderas-tab">
                     <section class="row">
                         <div v-for= "item in forHerramientas" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
+                            <div class="card m-auto shadow" style="width: 200px;">
+                                <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
+                                <div class="card-body border-top text-start">
+                                    <h5 class="card-title color-marca">{{item.nombre}}</h5>
+                                    <p class="card-text text-black review__item__text">
+                                        {{item.descripcion}}
+                                    </p>
+                                    <h5 class="card-title text-black">{{item.precio}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-pane fade" id="tuberias" role="tabpanel" aria-labelledby="tuberias-tab">
+                    <section class="row">
+                        <div v-for= "item in forTuberias" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
@@ -159,6 +179,13 @@
             forHerramientas: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Herramientas'){
+                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                    }
+                })
+            },
+            forTuberias: function(){
+                return this.articulosTabla.filter((i) => {
+                    if(i.categoria === 'Tuberia'){
                         return i.nombre.match(this.nombreProducto.toUpperCase());
                     }
                 })
