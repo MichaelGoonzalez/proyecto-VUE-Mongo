@@ -61,3 +61,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+    beforeCreate(){
+        var autenticacion = window.localStorage.getItem("rol");
+        if(autenticacion != 1){
+            this.$router.push({path: "/dashproducts"})
+        }
+    }
+}
+</script>

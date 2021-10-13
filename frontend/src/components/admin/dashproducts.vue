@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="barra-lateral col-md-2 col-sm-auto">
                     <nav class="menu d-flex d-sm-block justify-content-center align-items-center flex-wrap" >
-                        <router-link class="text-decoration-none" to="/dashusers">
+                        <router-link class="text-decoration-none" to="/dashusers" v-show="rol == 1">
                             <i class="fas fa-user-friends"></i><span>Usuarios</span>
                         </router-link>
                         <router-link class="text-decoration-none" to="/dashproducts">
@@ -144,13 +144,11 @@
                                                 </tr>
                                             </tbody>
                                         </table> 
-                                        <nav aria-label="Page navigation example">
+                                        <nav aria-label="Page navigation example" class="element">
                                             <ul class="pagination">
-                                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                                <li class="page-item"  v-on:click = "getPreviousPagina()"><a class="page-link">Previous</a></li>
+                                                <li v-for= "(pagina,index) in totalPaginas()" v-on:click= "getDataPagina(pagina)" :key= "index" class="page-item" ><a class="page-link">{{pagina}}</a></li>
+                                                <li class="page-item" v-on:click = "getNextPagina()"><a class="page-link">Next</a></li>
                                             </ul>
                                         </nav>   
                                     </div>
@@ -178,7 +176,11 @@ export default {
     },
     data(){
         return{
+            rol: window.localStorage.getItem("rol"),
+            //Listar productos
             articulosTabla: [],
+
+            //Guardado de productos
             atributos: {
                 codigo: "",
                 nombre: "",
@@ -187,20 +189,57 @@ export default {
                 fecha: "",
                 descripcion: ""
             },
-            codigoProducto: "",
             respuesta: "",
+
+            //Editor de productos
             editar:false,
-            articuloEditar: {}
+            articuloEditar: {},
+
+            //Buscador 
+
+            codigoProducto: "",
+
+            //Paginacion 
+
+            datosPaginados: [],
+            paginaActual: 1,
+            elementosPagina: 9
         }
     },
-    created() {
-        this.listarArticulos();
-    },
     methods:{
+
+        //Paginacion
+
+        totalPaginas(){
+            return Math.ceil(this.articulosTabla.length/this.elementosPagina)
+        },
+        getDataPagina(noPagina){
+            this.paginaActual = noPagina
+            this.datosPaginados = []
+            let ini = (noPagina* this.elementosPagina) - this.elementosPagina;
+            let fin = (noPagina* this.elementosPagina)
+
+            this.datosPaginados =  this.articulosTabla.slice(ini,fin)
+        },
+        getPreviousPagina(){
+            if(this.paginaActual > 1 ){
+                this.paginaActual --;
+            }
+            this.getDataPagina(this.paginaActual)
+        },
+        getNextPagina(){
+            if(this.paginaActual < this.totalPaginas()){
+                this.paginaActual ++;
+            }
+            this.getDataPagina(this.paginaActual)
+        },
+        //---------------------------//
+
         listarArticulos(){
             this.axios.get('/listar-articulos')
                 .then((response)=>{
                     this.articulosTabla = response.data;
+                    this.getDataPagina(1)
                 })
                 .catch(e=>{
                 console.log(e.response);
@@ -269,11 +308,21 @@ export default {
     },
     computed:{
         filtrarAritculos: function(){
-            return this.articulosTabla.filter((item)=>{
+            if (this.codigoProducto.length == 0) {
+                var array = this.datosPaginados
+            }
+            else{
+                array = this.articulosTabla
+            }
+            return array.filter((item)=>{
                 return item.codigo.match(this.codigoProducto);
             })
+
         }
-    }
+    },
+    created() {
+        this.listarArticulos();
+    },
 }
 </script>
 

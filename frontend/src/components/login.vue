@@ -49,6 +49,7 @@ export default {
             this.usuariosTabla.forEach((value)=>{
                 if(this.usuario == value.user & this.contraseña == value.pass){
                     window.localStorage.setItem('autenticacion','ok');
+                    window.localStorage.setItem('rol',value.role)
                     this.$router.push({path: "/dashproducts"})
                 }
                 else if(this.usuario == value.user & this.contraseña != value.pass){
