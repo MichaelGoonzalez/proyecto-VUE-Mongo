@@ -32,7 +32,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for= "item in filtrarAritculos" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
+                        <div v-for= "item in filtrarArticulos" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
@@ -137,22 +137,38 @@
             } 
         },
         computed:{
-            filtrarAritculos: function(){
+            filtrarArticulos: function(){
                 return this.articulosTabla.filter((item)=>{
                     return item.nombre.match(this.nombreProducto.toUpperCase());
                 })
             },
             forHogar: function(){
-                return this.articulosTabla.filter(i => i.categoria === 'Hogar')
+                return this.articulosTabla.filter((i) => {
+                    if(i.categoria === 'Hogar'){
+                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                    }
+                })
             },
             forElectricos: function(){
-                return this.articulosTabla.filter(i => i.categoria === 'Eléctricos')
+                return this.articulosTabla.filter((i) => {
+                    if(i.categoria === 'Eléctricos'){
+                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                    }
+                })
             },
             forHerramientas: function(){
-                return this.articulosTabla.filter(i => i.categoria === 'Herramientas')
+                return this.articulosTabla.filter((i) => {
+                    if(i.categoria === 'Herramientas'){
+                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                    }
+                })
             },
             forOtros: function(){
-                return this.articulosTabla.filter(i => i.categoria === 'Otros')
+                return this.articulosTabla.filter((i) => {
+                    if(i.categoria === 'Otros'){
+                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                    }
+                })
             }
             
         }
