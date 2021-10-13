@@ -146,7 +146,7 @@
                 return this.articulosTabla.filter(i => i.categoria === 'Hogar')
             },
             forElectricos: function(){
-                return this.articulosTabla.filter(i => i.categoria === 'Electricos')
+                return this.articulosTabla.filter(i => i.categoria === 'Eléctricos')
             },
             forHerramientas: function(){
                 return this.articulosTabla.filter(i => i.categoria === 'Herramientas')

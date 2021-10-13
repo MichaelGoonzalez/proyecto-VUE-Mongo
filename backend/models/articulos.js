@@ -1,12 +1,14 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const articuloSchema = new Schema({
-    nombre: {type: String, required: [true, 'Nombre obligatorio']},
     codigo: String,
+    nombre: {type: String, required: [true, 'Nombre obligatorio']},
     precio: String,
     cantidad: String,
     fecha: String,
     descripcion: String,
+    categoria: String,
+    url: String
 });
 
 //COnvertir a modelo

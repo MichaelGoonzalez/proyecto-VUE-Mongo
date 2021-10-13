@@ -58,31 +58,23 @@
                                             <textarea class="form-control" id="articulodescripcion" rows="3" v-model="articuloEditar.descripcion"></textarea>
                                     </div>
                                     <br>
-                                    <button style="margin-lef: 4%" type="submit" class="btn btn-primary mt-4">Editar</button>
-                                    <button type="submit" class="btn btn-primary mt-4" @click="editar=false">Cancelar</button> 
+                                    <button type="submit" class="btn btn-primary mt-4">Editar</button>
+                                    <button type="submit" class="btn btn-primary mt-4" style="margin-left: 4%" @click="editar=false">Cancelar</button> 
                                 </form>
 
                                 <form @submit.prevent= "agregarArticulo" v-if="!editar"> 
                                     <h2>Crear Producto</h2>
-                                    <div class="element">
-                                        <div class="label"><label for="producto" class="form-label text-dark">Nombre</label></div>
-                                        <input type="text" class="form-control" id="producto" aria-describedby="productoactual" v-model="atributos.nombre">
-                                        <div id="emailHelp" class="form-text"></div>
-                                    </div>
-                                    
-                                    <div class="element">
-                                        <div class="label"><label for="categoria" class="form-label text-dark">Categoría</label></div>
-                                        <select class="form-select" aria-label="Default select example" v-model="atributos.categoria">
-                                            <option selected>Maderas</option>
-                                            <option >Eléctricos</option>
-                                            <option >Three</option>
-                                        </select>
-                                        <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
-                                    </div>
+
                                     <div class="element">
                                         <div class="label"><label for="codeproduct" class="form-label text-dark"> Código del producto</label></div>
                                         <input type="text" class="form-control" id="codeproduct" v-model="atributos.codigo">
                                     </div>
+
+                                    <div class="element">
+                                        <div class="label"><label for="producto" class="form-label text-dark">Nombre</label></div>
+                                        <input type="text" class="form-control" id="producto" aria-describedby="productoactual" v-model="atributos.nombre">
+                                        <div id="emailHelp" class="form-text"></div>
+                                    </div>    
                                     <div class="element">
                                         <div class="label"><label for="precioProducto" class="form-label text-dark">Precio</label></div>
                                         <input type="number" class="form-control" id="precioProducto" v-model="atributos.precio">
@@ -90,6 +82,16 @@
                                     <div class="element">
                                         <div class="label"><label for="cantidad" class="form-label text-dark">Cantidad</label></div>
                                         <input type="number" class="form-control" id="cantidad" v-model="atributos.cantidad">
+                                    </div>
+                                    <div class="element">
+                                        <div class="label"><label for="categoria" class="form-label text-dark">Categoría</label></div>
+                                        <select class="form-select" aria-label="Default select example" v-model="atributos.categoria">
+                                            <option selected>Hogar</option>
+                                            <option >Eléctricos</option>
+                                            <option >Herraminetas</option>
+                                            <option >Otros</option>
+                                        </select>
+                                        <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
                                     </div>
                                     <div class="element">
                                         <div class="label"><label for="fecha" class="text-dark form-label">Fecha de registro</label></div>
@@ -165,7 +167,7 @@
 
 <script>
 
-import moment from 'moment';
+/* import moment from 'moment'; */
 
 export default {
     beforeCreate(){
@@ -238,6 +240,7 @@ export default {
         listarArticulos(){
             this.axios.get('/listar-articulos')
                 .then((response)=>{
+                    
                     this.articulosTabla = response.data;
                     this.getDataPagina(1)
                 })
@@ -256,6 +259,7 @@ export default {
                 this.atributos.precio = "";
                 this.atributos.cantidad = "";
                 this.descripcion = "";
+                this.getDataPagina(this.paginaActual);
                 res.data
             })
             .catch(e=>{
@@ -268,9 +272,10 @@ export default {
             this.axios.get(`/buscar-articulo/${id}`)
             .then(res=>{
                 this.articuloEditar=res.data;
-                var fecha = moment(this.articuloEditar.fecha,"MM/DD/YY")
+                
+                /* var fecha = moment(this.articuloEditar.fecha,"MM/DD/YY")
                 var fe = moment(fecha).format("YYYY-MM-DD")
-                this.articuloEditar.fecha = fe
+                this.articuloEditar.fecha = fe */
 
             })
             .catch(e=>{
@@ -282,12 +287,17 @@ export default {
         },
         editarArticulo(item){
             
-            this.axios.put(`/buscar-articulo/${item._id}`, item)
+            this.axios.put(`/editar-articulo/${item._id}`, item)
             .then(res=>{
                 const index= this.articulosTabla.findIndex(n=> n._id===res.data._id);
-                console.log(index);
-                /* this.articulosTabla[index].nombre=res.data.nombre;
-                this.articulosTabla[index].descripcion=res.data.descripcion; */
+                this.articulosTabla[index].codigo = res.data.codigo;
+                this.articulosTabla[index].nombre=res.data.nombre;
+                this.articulosTabla[index].precio = res.data.precio;
+                this.articulosTabla[index].cantidad = res.data.cantidad;
+                this.articulosTabla[index].categoria = res.data.categoria
+                this.articulosTabla[index].fecha = res.data.fecha
+                this.articulosTabla[index].descripcion=res.data.descripcion;
+                this.getDataPagina(this.paginaActual);
                 this.editar=false;
             })
             .catch(e=>{
@@ -300,6 +310,7 @@ export default {
             .then(res=>{
                 const index = this.articulosTabla.findIndex(item=> item._id ===res.data._id);
                 this.articulosTabla.splice(index,1);
+                this.getDataPagina(this.paginaActual);
             })
             .catch(e=>{
                 console.log(e.response)

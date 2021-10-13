@@ -50,6 +50,26 @@ router.get('/buscar-articulo/:id', async(req, res) => {
     } 
 });   
 
+router.put('/editar-articulo/:id',async(req,res)=>{
+    
+    const _id=req.params.id;
+    const body =req.body;
+
+    try {
+
+        const articulosDB= await Articulos.findByIdAndUpdate(_id,body,{new:true});
+        res.json(articulosDB);
+        
+    } catch (error) {
+
+        return res.status(500).json({
+
+            mensaje:'Ocurrio un error',
+            error
+        })
+        
+    }
+})
 
 router.delete('/borrar-articulo/:id', async(req,res)=>{
 
