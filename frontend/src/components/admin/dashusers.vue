@@ -11,8 +11,8 @@
                     </nav>
                 </div>
             <main class="main col">
-                <div class="container">
-                    <div class="col-12 col-lg-8 mx-auto">
+                <div class="row justify-content align-content-center text-center d-flex">
+                    <div class="col-12 col-md-5 mx-auto">
                         <form @submit.prevent= "agregarUsuario" v-if="!editar">
                             <div class="contenedor">
                                 <h2>Crear un nuevo usuario</h2>
@@ -36,7 +36,7 @@
                         </form>
                         <form @submit.prevent= "editarUsuario(usuarioEditar)" v-if="editar">
                             <div class="contenedor">
-                                <h2>Crear un nuevo usuario</h2>
+                                <h2>Editar usuario</h2>
                                 <div class="element mb-3">
                                     <div class="label"><label for="user">Usuario</label></div>
                                     <input id="user" type="text" placeholder="Escriba el nombre de usuario" v-model="usuariosEditar.user"><br/>
@@ -56,7 +56,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5 mx-auto">
                         <div class="contenedor">
                                 <h2>Usuarios registrados</h2>
                                 <div class="element">
@@ -75,7 +75,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-for= "(item,index) in filtrarAritculos" :key= "index">
+                                                <tr v-for= "(item,index) in filtrarUsuarios" :key= "index">
                                                     <td>{{item.role}}</td>
                                                     <td>{{item.user}}</td>
                                                     <td>{{item.pass}}</td>
@@ -173,11 +173,11 @@ export default {
         },
         //---------------------------//
 
-        listarArticulos(){
+        listarUsuarios(){
             this.axios.get('/listar-usuarios')
                 .then((response)=>{
                     
-                    this.articulosTabla = response.data;
+                    this.UsuariosTabla = response.data;
                     this.getDataPagina(1)
                 })
                 .catch(e=>{

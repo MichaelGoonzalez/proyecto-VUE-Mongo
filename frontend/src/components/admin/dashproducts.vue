@@ -134,7 +134,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-for= "(item,index) in filtrarAritculos" :key= "index">
+                                                <tr v-for= "(item,index) in filtrarArticulos" :key= "index">
                                                     <td>{{item.codigo}}</td>
                                                     <td>{{item.nombre}}</td>
                                                     <td>{{item.cantidad}}</td>
