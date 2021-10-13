@@ -33,10 +33,10 @@ router.get('/listar-articulos', async(req, res) => {
 
 router.get('/buscar-articulo/:id', async(req, res) => {
 
-    const codigo = req.params.id;
+    const _id = req.params.id;
 
     try {
-        const articulosDB = await Articulos.findOne({codigo});
+        const articulosDB = await Articulos.findOne({_id});
         res.json(articulosDB)
         
     }catch (error) {
