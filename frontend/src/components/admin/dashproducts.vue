@@ -319,7 +319,7 @@ export default {
         }
     },
     computed:{
-        filtrarAritculos: function(){
+        filtrarArticulos: function(){
             if (this.codigoProducto.length == 0) {
                 var array = this.datosPaginados
             }
