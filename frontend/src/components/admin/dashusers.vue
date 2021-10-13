@@ -18,23 +18,23 @@
                                 <h2>Crear un nuevo usuario</h2>
                                 <div class="element mb-3">
                                     <div class="label"><label for="usuario">Usuario</label></div>
-                                    <input id="usuario" type="text" placeholder="Escriba el nombre de usuario" v-model="atributos.user"><br/>
+                                    <input id="usuario" type="text" placeholder="Escriba el nombre de usuario" v-model="atributos.user" required><br/>
                                 </div>
                                 <div class="element mb-3">
                                     <div class="label"><label for="password">Contraseña</label></div>
-                                    <input id="password" type="text" placeholder="Escriba la contraseña" v-model="atributos.pass"><br/>
+                                    <input id="password" type="text" placeholder="Escriba la contraseña" v-model="atributos.pass" required><br/>
                                 </div>
                                 <div class="element mb-3">
                                     <div class="label"><label for="role">Rol</label></div>
-                                    <select id="role" type="text" placeholder="Seleccione el rol" v-model="atributos.role">
-                                        <option disabled>1</option>
-                                        <option>0</option>
+                                    <select id="role" class="form-select" aria-label="Default select example" v-model="atributos.role" required>
+                                        <option disabled>Root</option>
+                                        <option value="0">Administrador</option> 
                                     </select>
                                 </div>
                                 <input class="btn btn-primary" type="submit" value="Agregar"/>
                             </div>
                         </form>
-                        <form @submit.prevent= "editarUsuarios(usuariosEditar)" v-if="editar">
+                        <form @submit.prevent= "editarUsuario(usuarioEditar)" v-if="editar">
                             <div class="contenedor">
                                 <h2>Crear un nuevo usuario</h2>
                                 <div class="element mb-3">
@@ -47,9 +47,9 @@
                                 </div>
                                 <div class="element mb-3">
                                     <div class="label"><label for="role">Rol</label></div>
-                                    <select id="role" type="text" placeholder="Seleccione el rol" v-model="usuariosEditar.role" disabled>
-                                        <option>1</option>
-                                        <option>0</option>
+                                    <select id="role" class="form-select" aria-label="Default select example" v-model="usuariosEditar.role" disabled>
+                                        <option value="1">Root</option>
+                                        <option value="0">Administrador</option>
                                     </select>
                                 </div>
                                 <input class="btn btn-primary" type="submit" value="Agregar"/>
@@ -131,7 +131,7 @@ export default {
 
             //Editor de productos
             editar:false,
-            articuloEditar: {},
+            usuarioEditar: {},
 
             //Buscador 
 
@@ -187,7 +187,7 @@ export default {
         agregarUsuario(){
             this.axios.post('/nuevo-usuario',this.atributos)
             .then(res=>{
-                this.articulosTabla.push(res.data);
+                this.usuariosTabla.push(res.data);
                 this.respuesta = "Se agregó con éxito";
                 this.atributos.user = "";
                 this.atributos.pass = "";
