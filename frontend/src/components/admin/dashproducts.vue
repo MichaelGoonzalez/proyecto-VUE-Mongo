@@ -31,9 +31,10 @@
                                     <div class="element">
                                         <div class="label"><label for="categoria" class="form-label text-dark">Categoría</label></div>
                                         <select class="form-select" aria-label="Default select example" v-model="articuloEditar.categoria">
-                                            <option selected>Maderas</option>
+                                            <option selected>Hogar</option>
                                             <option >Eléctricos</option>
-                                            <option >Three</option>
+                                            <option >Herramientas</option>
+                                            <option>Otros</option>
                                         </select>
                                         <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
                                     </div>
