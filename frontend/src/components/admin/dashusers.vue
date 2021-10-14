@@ -9,7 +9,7 @@
                         </router-link>
                         <router-link  class="text-decoration-none" to="/"><i class="fas fa-sign-out-alt m-1"></i>Salir</router-link>
                     </nav>
-                </div>
+            </div>
             <main class="main col">
                 <div class="row justify-content align-content-center text-center d-flex">
                     <div class="col-12 col-lg-5 mx-auto mt-3">
@@ -111,13 +111,12 @@
 export default {
     beforeCreate(){
         var autenticacion = window.localStorage.getItem("rol");
-        if(autenticacion != 0){
-            this.$router.push({path: "/dashusers"})
+        if(autenticacion != 1){
+            this.$router.push({path: "/login"})
         }
     },
     data(){
         return{
-            rol: window.localStorage.getItem("rol"),
             //Listar productos
             usuariosTabla: [],
 

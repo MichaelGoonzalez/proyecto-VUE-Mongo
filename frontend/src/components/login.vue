@@ -50,7 +50,13 @@ export default {
                 if(this.usuario == value.user & this.contraseña == value.pass){
                     window.localStorage.setItem('autenticacion','ok');
                     window.localStorage.setItem('rol',value.role)
-                    this.$router.push({path: "/dashproducts"})
+                    if(value.role == 0){
+                        this.$router.push({path: "/dashproducts"})
+                    }
+                    else{
+                        console.log(value.rol)
+                        this.$router.push({path: "/dashusers"})
+                    }
                 }
                 else if(this.usuario == value.user & this.contraseña != value.pass){
                     this.mensaje = "La contraseña que ingresaste es incorrecta"
