@@ -130,6 +130,26 @@ router.get('/listar-usuarios', async(req, res) => {
     }
 }); 
 
+/*Buscar usuario por ID*/
+router.get('/buscar-usuario/:id', async(req, res) => {
+
+    const _id = req.params.id;
+
+    try {
+        const usuariosDB = await Usuarios.findOne({_id});
+        res.json(usuariosDB)
+        
+    }catch (error) {
+
+        return res.status(500).json({
+
+            mensaje:'Ocurrió un error',
+            error
+        })
+        
+    } 
+}); 
+
 /*Editar usuarios*/
 router.put('/editar-usuario:id',async(req,res)=>{
     
