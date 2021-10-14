@@ -205,6 +205,7 @@ export default {
             this.axios.get(`/buscar-usuario/${id}`)
             .then(res=>{
                 this.usuarioEditar=res.data;
+                console.log(res.data)
 
             })
             .catch(e=>{

@@ -34,6 +34,7 @@
                                             <option selected>Hogar</option>
                                             <option >Eléctricos</option>
                                             <option >Herramientas</option>
+                                            <option >Tuberia</option>
                                             <option>Otros</option>
                                         </select>
                                         <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
