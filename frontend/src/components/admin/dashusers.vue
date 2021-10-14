@@ -12,7 +12,7 @@
                 </div>
             <main class="main col">
                 <div class="row justify-content align-content-center text-center d-flex">
-                    <div class="col-12 col-lg-5 mx-auto">
+                    <div class="col-12 col-lg-5 mx-auto mt-3">
                         <form @submit.prevent= "agregarUsuario" v-if="!editar">
                             <div class="contenedor">
                                 <h2>Crear un nuevo usuario</h2>
