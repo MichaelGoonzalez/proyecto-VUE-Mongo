@@ -52,7 +52,7 @@
                 <section class="row">
                     <div v-for = "item in forTutoriales" :key= "item.id" class="col-12 col-lg-4 mt-5">
                         <div class="card m-auto shadow" style="width: 340px">
-                            <img v-bind:src= "item.img" class="card-img-top" alt="Imagen articulo" >
+                            <img v-bind:src= "item.img" class="card-img-top" alt="Imagen articulo" style="height: 300px;">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                     <h5 class="card-title text-black">{{item.titulo}}</h5>
@@ -142,8 +142,8 @@
 
                 },
                 {
-                    url:"https://ebani.com.co/wp-content/uploads/2020/10/Mesa-auxiliar-kappa-oscura-Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Ferrum.png",
-                    img: require('../assets/mesa.jpg'),
+                    url:"https://mejorconsalud.as.com/hacer-mesa-auxiliar/",
+                    img: "https://mesaauxiliares.com/wp-content/uploads/2020/12/mesa-auxiliar-de-comedor-300x200.jpg",
                     clase: "Tutorial",
                     titulo: "¿Cómo hacer una mesa auxiliar?",
                     descripcion: "Las mesas auxiliares son indispensables en el hogar porque resultan muy prácticas y aportan estilo. ¡Aprende a hacer una tú mismo!" + "                 "+ " Hacer una mesa auxiliar es una gran idea. Se trata de un mueble funcional y aporta estilo a la decoración. Este tipo de mesas complementan muy bien diversos espacios; permiten reposar objetos como floreros, libros o cualquier otro tipo de elemento decorativo." 
