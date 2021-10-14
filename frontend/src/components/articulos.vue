@@ -182,9 +182,9 @@
     },
     methods: {
         res(){
-            return{
-                res = 5
-            }
+            // return{
+            //     res = 5
+            // }
         }
     },
     }
