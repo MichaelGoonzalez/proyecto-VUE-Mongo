@@ -12,7 +12,7 @@
                 </div>
             <main class="main col">
                 <div class="row justify-content align-content-center text-center d-flex">
-                    <div class="col-12 col-md-5 mx-auto">
+                    <div class="col-12 col-lg-5 mx-auto">
                         <form @submit.prevent= "agregarUsuario" v-if="!editar">
                             <div class="contenedor">
                                 <h2>Crear un nuevo usuario</h2>
@@ -38,16 +38,16 @@
                             <div class="contenedor">
                                 <h2>Editar usuario</h2>
                                 <div class="element mb-3">
-                                    <div class="label"><label for="user">Usuario</label></div>
-                                    <input id="user" type="text" placeholder="Escriba el nombre de usuario" v-model="usuariosEditar.user"><br/>
+                                    <div class="label"><label for="user" >Usuario</label></div>
+                                    <input id="user" type="text" placeholder="Escriba el nombre de usuario" v-model="usuarioEditar.user"><br/>
                                 </div>
                                 <div class="element mb-3">
                                     <div class="label"><label for="password">Contraseña</label></div>
-                                    <input id="password" type="text" placeholder="Escriba la contraseña" v-model="usuariosEditar.pass"><br/>
+                                    <input id="password" type="text" placeholder="Escriba la contraseña" v-model="usuarioEditar.pass"><br/>
                                 </div>
                                 <div class="element mb-3">
                                     <div class="label"><label for="role">Rol</label></div>
-                                    <select id="role" class="form-select" aria-label="Default select example" v-model="usuariosEditar.role" disabled>
+                                    <select id="role" class="form-select" aria-label="Default select example" v-model="usuarioEditar.role" disabled>
                                         <option value="1">Root</option>
                                         <option value="0">Administrador</option>
                                     </select>
@@ -56,7 +56,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-5 mx-auto">
+                    <div class="col-12 col-lg-7 mx-auto">
                         <div class="contenedor">
                                 <h2>Usuarios registrados</h2>
                                 <div class="element">
@@ -177,7 +177,7 @@ export default {
             this.axios.get('/listar-usuarios')
                 .then((response)=>{
                     
-                    this.UsuariosTabla = response.data;
+                    this.usuariosTabla = response.data;
                     this.getDataPagina(1)
                 })
                 .catch(e=>{
@@ -258,6 +258,6 @@ export default {
     },
     created() {
         this.listarUsuarios();
-    },
+    }
 }
 </script>
