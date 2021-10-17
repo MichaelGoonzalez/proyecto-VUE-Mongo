@@ -66,6 +66,9 @@ export default {
                 }
             });
         }
-    }
+    },
+    mounted() {  
+    document.title = "Iniciar sesión";  
+  } 
 }
 </script>

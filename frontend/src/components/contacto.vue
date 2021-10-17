@@ -42,3 +42,12 @@
             </section>
     </div>
 </template>
+
+<script>  
+export default {  
+  name: "App",  
+  mounted() {  
+    document.title = "Contacto";  
+  }  
+};  
+</script>

@@ -33,6 +33,15 @@
         </div>
 </template>
 
+<script>  
+export default {  
+  name: "App",  
+  mounted() {  
+    document.title = "Nosotros";  
+  }  
+};  
+</script>
+
 <style>
     .contenedor{
         margin: 5%

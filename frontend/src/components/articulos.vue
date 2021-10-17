@@ -179,7 +179,10 @@
                 return i.clase === 'Consejos'
             })
         },
-    }       
+    },
+    mounted() {  
+        document.title = "Artículos de interés";  
+    }        
 }
 </script>
 

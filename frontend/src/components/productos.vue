@@ -198,7 +198,10 @@
                 })
             }
             
-        }
+        },
+        mounted() {  
+        document.title = "Productos";  
+        } 
     }
 </script>
 
