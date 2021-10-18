@@ -50,26 +50,27 @@
                                                     <th>Producto</th>
                                                     <th class="cantidad">Cantidad</th>
                                                     <th>Costo</th>
+                                                    <th></th>
                                                 </tr>  
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i>12<i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></td>
                                                     <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                    <td><i class="fas fa-trash-alt hvr-push"></i></td>
                                                 </tr>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i>12<i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></td>
                                                     <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                    <td><i class="fas fa-trash-alt hvr-push"></i></td>
                                                 </tr>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i>12<i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></td>
                                                     <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                    <td><i class="fas fa-trash-alt hvr-push"></i></td>
                                                 </tr>
                                             </tbody>
                                             <tfoot style="border-bottom:hidden">
@@ -95,7 +96,7 @@
                     <section class="row">
                         <div v-for= "item in filtrarArticulos" :key= "item.id" class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus" title="Add"></i>
+                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -112,7 +113,7 @@
                     <section class="row">
                         <div v-for= "item in forHogar" :key= "item.id"  class="col-12 col-md-4 col-lg-3 mt-5">
                             <div  class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus"></i>
+                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus" ></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -129,7 +130,7 @@
                     <section class="row">
                         <div v-for= "item in forElectricos" :key= "item.id1" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus"></i>
+                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto"> 
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -146,7 +147,7 @@
                     <section class="row">
                         <div v-for= "item in forHerramientas" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus"></i>
+                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -163,7 +164,7 @@
                     <section class="row">
                         <div v-for= "item in forTuberias" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus"></i>
+                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -180,7 +181,7 @@
                     <section class="row">
                         <div v-for= "item in forOtros" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus"></i>
+                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.nombre}}</h6>
@@ -296,9 +297,6 @@
 
     #cart:hover{
     transform: scale(1.4)
-    }
-    i:hover{
-        color: #cdcdcd;
     }
     button{
         border: none;

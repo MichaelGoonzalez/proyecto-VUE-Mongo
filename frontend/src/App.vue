@@ -53,7 +53,7 @@
                             <a style="margin-left:4px" class="text-white" href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                         <div class="">
-                            <router-link to="/login" class="text-white text-decoration-none">Administrador</router-link>
+                            <router-link to="/login" class="admin text-white text-decoration-none">Administrador</router-link>
                         </div>
                     </div>
                 </div>
@@ -65,6 +65,12 @@
     
     #nav a.router-link-exact-active {
         color: #f6821f;
+    }
+    .admin{
+        padding: 5px;
+        border: 2px white solid;
+        border-radius: 5px;
+        background: #222222b6;
     }
 </style>
 
