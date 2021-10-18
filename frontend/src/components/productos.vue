@@ -27,7 +27,8 @@
                             <a class="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
                                 type="button" role="tab" aria-controls="otros" aria-selected="true">Otros</a>
                         </li>
-                        <li class="nav-item" style="margin-left: 4%">
+                        <li class="nav-item fontsearch" style="margin-left: 4%">
+                                <i class="fas fa-search"></i>
                                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "nombreProducto">
                         </li>
                         <li class="nav-item">
@@ -56,21 +57,33 @@
                                             <tbody>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i>12<i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></td>
+                                                    <td>
+                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
+                                                    </td>
                                                     <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt hvr-push"></i></td>
+                                                    <td>
+                                                        <button><i class="fas fa-trash-alt hvr-push"></i></button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i>12<i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></td>
+                                                    <td>
+                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
+                                                    </td>
                                                     <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt hvr-push"></i></td>
+                                                    <td>
+                                                        <button><i class="fas fa-trash-alt hvr-push"></i></button>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i>12<i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></td>
+                                                    <td>
+                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
+                                                    </td>
                                                     <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt hvr-push"></i></td>
+                                                    <td>
+                                                        <button><i class="fas fa-trash-alt hvr-push"></i></button>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                             <tfoot style="border-bottom:hidden">
@@ -303,7 +316,7 @@
         padding: 0%;
         margin: 0%;
         color: #f6821f;
-        background-color: white;
+        background-color: transparent;
 
     }
     .modal-header{

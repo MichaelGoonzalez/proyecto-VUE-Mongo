@@ -355,7 +355,7 @@ h2{
   background: #333;
   background: rgba(0, 0, 0, .8);
   border-radius: 5px;
-  bottom: -60px;
+  bottom: -75px;
   color: #fff;
   font-size: 12px;
   content: attr(gloss);
@@ -368,10 +368,57 @@ h2{
 .tags:hover:before {
   border: solid;
   border-color: #333 transparent;
-  border-width: 0 6px 6px 6px;
-  bottom: -32px;
+  border-width: 0 9px 9px 9px;
+  bottom: -47px;
   content: "";
   right: 2%;
   position: absolute;
   z-index: 99;
+}
+/*Redes*/
+.fab{
+  transition: 0.4s all
+  }
+
+  .fab:hover{
+  transform: scale(1.4)
+  }
+
+  /*íconos en inputs*/
+  input[type=text], 
+  input[type=password],
+  input[type=search] { 
+            display: inline-block; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+  }
+  .fontsearch {
+    position: relative;
+}
+  
+.fontsearch i{
+    position: absolute;
+    color: rgb(216, 208, 208);
+    margin: 3% 6% 3% 84%;
+    font-size: 1.5em;
+}
+.fontuser {
+  position: relative;
+}
+
+.fontuser i{
+  position: absolute;
+  color: rgb(216, 208, 208);
+  margin: 9% 40% 3% 38%;
+  font-size: 1.5em;
+}
+.fontpass {
+  position: relative;
+}
+
+.fontpass i{
+  position: absolute;
+  color: rgb(216, 208, 208);
+  margin: 9% 40% 3% 38%;
+  font-size: 1.5em;
 }

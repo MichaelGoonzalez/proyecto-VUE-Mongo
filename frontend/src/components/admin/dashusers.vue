@@ -60,7 +60,7 @@
                         <div class="contenedor">
                                 <h2>Usuarios registrados</h2>
                                 <div class="element">
-                                <div class="label"><label for="usuario" class="form-label text-dark">Usuario</label></div>
+                                    <div class="label"><label for="usuario" class="form-label text-dark">Usuario</label></div>
                                     <input type="text" class="form-control" id="usuario" v-model= "user" autocomplete="off">
                                     <br>
                                 </div>                

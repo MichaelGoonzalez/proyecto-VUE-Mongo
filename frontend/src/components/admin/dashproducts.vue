@@ -37,7 +37,6 @@
                                             <option >Tuberia</option>
                                             <option>Otros</option>
                                         </select>
-                                        <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
                                     </div>
                                     <div class="element">
                                         <div class="label"><label for="codeproduct" class="form-label text-dark"> Código del producto</label></div>
@@ -94,7 +93,6 @@
                                             <option >Tuberia</option>
                                             <option >Otros</option>
                                         </select>
-                                        <!-- <input type="text" class="form-control" id="producto" aria-describedby="productoactual"> -->
                                     </div>
                                     <div class="element">
                                         <div class="label"><label for="fecha" class="text-dark form-label">Fecha de registro</label></div>

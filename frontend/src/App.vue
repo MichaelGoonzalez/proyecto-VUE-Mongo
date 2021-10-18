@@ -48,12 +48,12 @@
                             &copy;  Carvajal Materiales | Todos los derechos reservados.
                         </div>
                         <div id="redes-sociales" class="mx-4">
-                            <a style="margin-left:4px" class="text-white" href="https://www.facebook.com/Carvajalmateriales" target="_blank"><i class="fab fa-facebook"></i></a>
-                            <a style="margin-left:4px" class="text-white" href="https://www.instagram.com/carvajalmateriales/" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a style="margin-left:4px" class="text-white" href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a style="margin-left:6px" class="text-white" href="https://www.facebook.com/Carvajalmateriales" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a style="margin-left:6px" class="text-white" href="https://www.instagram.com/carvajalmateriales/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a style="margin-left:6px" class="text-white" href="https://api.whatsapp.com/send?phone=%2B573003659340&fbclid=IwAR1Fs2TmR-vYJG0c8c1zhm4XzCFEJjWr2zbsaMjivUyG2SCrSoFVYx49qwA" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         </div>
                         <div class="">
-                            <router-link to="/login" class="admin text-white text-decoration-none">Administrador</router-link>
+                            <router-link to="/login" class="admin text-white text-decoration-none hvr-bounce-in">Administrador</router-link>
                         </div>
                     </div>
                 </div>
@@ -67,11 +67,10 @@
         color: #f6821f;
     }
     .admin{
-        padding: 5px;
-        border: 2px white solid;
-        border-radius: 5px;
-        background: #222222b6;
+        padding: 0px;
+        border-bottom: 3px #f6821f solid;
     }
+
 </style>
 
 <script>
