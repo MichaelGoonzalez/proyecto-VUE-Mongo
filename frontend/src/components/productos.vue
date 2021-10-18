@@ -32,7 +32,7 @@
                         </li>
                         <li class="nav-item">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">
-                                <i class="fas fa-shopping-cart" id="cart"></i></button>
+                                <i class="material-icons" id="cart">shopping_cart</i></button>
                         </li>
                     </ul>
                     <div class="modal fade" tabindex="-1" id="cotizar" aria-hidden="true" aria-labelledby="cotizacion">
@@ -53,24 +53,6 @@
                                                 </tr>  
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
-                                                    <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
-                                                    <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
-                                                    <td>$12,000</td>
-                                                    <td><i class="fas fa-trash-alt"></i></td>
-                                                </tr>
                                                 <tr>
                                                     <td>CINTA TRANSPARENTE CELLUX 100 M</td>
                                                     <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
@@ -113,7 +95,7 @@
                     <section class="row">
                         <div v-for= "item in filtrarArticulos" :key= "item.id" class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <i class="fas fa-plus-square" id="plus"></i>
+                                <i class="fas fa-plus-square" id="plus" title="Add"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
