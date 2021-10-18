@@ -1,5 +1,5 @@
 <template>
-    <div id="contenedor" class="container">
+    <div class="container mx-auto mt-5">
         <div class="row">
             <section class="col-md-10 mx-auto">
                 <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
@@ -19,15 +19,6 @@
                             <a class="nav-link" id="consejos-tab" data-bs-toggle="tab" data-bs-target="#consejos"
                                 type="button" role="tab" aria-controls="consejos" aria-selected="true">Consejos</a>
                         </li>
-                   <!--  <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="dropdown-categorias" data-bs-toggle="dropdown"
-                            href="#" role="button" aria-expanded="false">Más categorías</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown-categorias">
-                            <li><a class="dropdown-item" href="#">Opción 1</a></li>
-                            <li><a class="dropdown-item" href="#">Opción 2</a></li>
-                            <li><a class="dropdown-item" href="#">Opción 3</a></li>
-                        </ul>
-                    </li> -->
                 </ul>
             </section>
         </div>

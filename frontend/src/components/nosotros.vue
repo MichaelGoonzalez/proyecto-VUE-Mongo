@@ -1,7 +1,7 @@
 <template>
-    <div class="container" id="contenedor">
+    <div class="container mx-auto mt-5">
             <section class="row d-flex justify-content-evenly text-black">
-                <div class="col-md-5 my-auto text-start">
+                <div class="col-10 col-md-5 my-auto text-start">
                     <h1 class="color-marca">¿Quiénes somos?</h1>
                     <p class="lead">
                         Somos una empresa dedicada a la distribución de productos eléctricos y de ferretería a los diferentes municipios 
@@ -16,7 +16,7 @@
                         para la remodelación de sus hogares.
                     </p>
                 </div>
-                <div class="col-md-5 my-auto text-start">
+                <div class="col-10 col-md-5 my-auto text-start">
                     <h2 class="color-marca">Misión</h2>
                     <p class="lead">
                         Ofrecer productos de calidad a nuestros clientes, contribuyendo a la mejora de sus viviendas y cumpliendo sus 
@@ -41,9 +41,3 @@ export default {
   }  
 };  
 </script>
-
-<style>
-    .contenedor{
-        margin: 5%
-    }
-</style>

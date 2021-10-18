@@ -1,5 +1,5 @@
 <template>
-        <div id= "contenedor" class="container">
+        <div class="container mx-auto mt-5">
             <div class="row">
                 <section class="col-md-10 mx-auto">
                     <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
@@ -21,7 +21,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="tuberias-tab" data-bs-toggle="tab" data-bs-target="#tuberias"
-                                type="button" role="tab" aria-controls="tuberias" aria-selected="true">Tuberias</a>
+                                type="button" role="tab" aria-controls="tuberias" aria-selected="true">Tuberías</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="otros-tab" data-bs-toggle="tab" data-bs-target="#otros"
@@ -30,14 +30,90 @@
                         <li class="nav-item" style="margin-left: 4%">
                                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "nombreProducto">
                         </li>
+                        <li class="nav-item">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">
+                                <i class="fas fa-shopping-cart" id="cart"></i></button>
+                        </li>
                     </ul>
+                    <div class="modal fade" tabindex="-1" id="cotizar" aria-hidden="true" aria-labelledby="cotizacion">
+                        <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content text-dark">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cotizacion">Cotización</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: white">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table table-hover">
+                                            <thead class="table-light" id="thead">
+                                                <tr>
+                                                    <th>Producto</th>
+                                                    <th class="cantidad">Cantidad</th>
+                                                    <th>Costo</th>
+                                                </tr>  
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td>$12,000</td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td>$12,000</td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td>$12,000</td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td>$12,000</td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td>$12,000</td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                    <td><i class="fas fa-minus" style="padding-right: 12px"></i>12<i class="fas fa-plus" style="padding-left: 12px"></i></td>
+                                                    <td>$12,000</td>
+                                                    <td><i class="fas fa-trash-alt"></i></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot style="border-bottom:hidden">
+                                                <tr>
+                                                    <td></td>
+                                                    <td style="font-weight: bolder">Total</td>
+                                                    <td>12,000</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn2">Guardar</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
                 </section>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="todos" role="tabpanel" aria-labelledby="todos-tab">
                     <section class="row">
-                        <div v-for= "item in filtrarArticulos" :key= "item.id" class="col-12 col-md-4 col-lg-3 mt-5">
+                        <div v-for= "item in filtrarArticulos" :key= "item.id" class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
+                                <i class="fas fa-plus-square" id="plus"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -54,6 +130,7 @@
                     <section class="row">
                         <div v-for= "item in forHogar" :key= "item.id"  class="col-12 col-md-4 col-lg-3 mt-5">
                             <div  class="card m-auto shadow" style="width: 200px;">
+                                <i class="fas fa-plus-square" id="plus"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -70,6 +147,7 @@
                     <section class="row">
                         <div v-for= "item in forElectricos" :key= "item.id1" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
+                                <i class="fas fa-plus-square" id="plus"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto"> 
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -86,6 +164,7 @@
                     <section class="row">
                         <div v-for= "item in forHerramientas" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
+                                <i class="fas fa-plus-square" id="plus"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -102,6 +181,7 @@
                     <section class="row">
                         <div v-for= "item in forTuberias" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
+                                <i class="fas fa-plus-square" id="plus"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -118,6 +198,7 @@
                     <section class="row">
                         <div v-for= "item in forOtros" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
+                                <i class="fas fa-plus-square" id="plus"></i>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.nombre}}</h6>
@@ -221,5 +302,70 @@
     #imagenes-producto{
         width: 200px;
         height: 200px;
+    }
+    #cart{
+        color:#f6821f;
+        font-size: 2em;
+        margin-left: 3px;
+    }
+    #cart{
+    transition: 0.4s all
+    }
+
+    #cart:hover{
+    transform: scale(1.4)
+    }
+    i:hover{
+        color: #cdcdcd;
+    }
+    button{
+        border: none;
+        padding: 0%;
+        margin: 0%;
+        color: #f6821f;
+        background-color: white;
+
+    }
+    .modal-header{
+        background: #000;
+        color: #fff;
+    }
+    .btn-close{
+        color:#fff;
+    }
+    .btn2{
+        background: #f6821f;
+        color: #fff;
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .btn2:hover{
+        color: #fff;
+        background-color: #fa7603;
+        border-color: #fa7603;
+    }
+    .fas{
+        color:#f6821f;
+    }
+    .cantidad{
+        min-width: 90px;
+    }
+    #plus{
+        position:absolute;
+        right: 0%;
+        font-size: 1.5em;
     }
 </style>

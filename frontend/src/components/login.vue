@@ -1,5 +1,5 @@
 <template>
-    <div class= "container">
+    <div class= "container mx-auto">
         <section class="col-9 col-lg-4 mx-auto">
             <form @submit.prevent= "comprobarUsuario" method="POST">
                 <div class="contenedor">

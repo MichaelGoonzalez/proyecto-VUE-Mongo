@@ -75,6 +75,10 @@ h2{
 .color-marca{  
   color: #f6821f !important;
 }
+
+.container{
+  margin: 0;
+}
 /*Formularios*/
 
 .contenedor{

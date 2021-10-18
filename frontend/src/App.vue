@@ -3,7 +3,7 @@
         <header class="mb-auto">
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container">
-                    <router-link to="/" class="navbar-brand">
+                    <router-link to="/" class="navbar-brand mx-xs-0 mx-sm-4 mx-lg-5">
                         <img src="../src/assets/logo.png" alt="" width="150" height="40" class="d-inline-block align-text-top" />
                     </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -16,25 +16,19 @@
                         <div class="d-flex">
                             <ul id="nav" class="navbar-nav nav-masthead me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <router-link to="/" class="nav-link" aria-current="page" exact-active-class="active color-marca" >Inicio</router-link>
-                                    <!-- <a class="nav-link active color-marca" aria-current="page"
-                                        href="/html/index.html">Inicio</a> -->
+                                    <router-link to="/" class="nav-link" aria-current="page" exact-active-class="active color-marca">Inicio</router-link>
                                 </li>
                                 <li class="nav-item">
                                     <router-link to="/nosotros" class="nav-link" active-class="active">Nosotros</router-link>
-                                    <!-- <a class="nav-link" href="nosotros.html">Nosotros</a> -->
                                 </li>
                                 <li class="nav-item">
                                     <router-link to="/productos" class="nav-link" active-class="active">Productos</router-link>
-                                    <!-- <a class="nav-link" href="productos.html">Productos</a> -->
                                 </li>
                                 <li class="nav-item">
                                     <router-link to="/articulos" class="nav-link" active-class="active">Artículos</router-link>
-                                    <!-- <a class="nav-link" href="articulos.html">Artículos</a> -->
                                 </li>
                                 <li class="nav-item">
                                     <router-link to="/contacto" class="nav-link" active-class="active">Contacto</router-link>
-                                    <!-- <a class="nav-link" href="">Contacto</a> -->
                                 </li>
                                 
                             </ul>

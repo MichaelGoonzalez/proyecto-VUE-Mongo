@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container mx-auto">
             <section class="row d-flex">
                 <div class="col-10 col-lg-5 mx-auto">
                     <form action="server" method="POST">
