@@ -58,7 +58,7 @@
                                                 <tr v-for= "item in carritoCompras" :key= "item.id">
                                                     <td>{{item.nombre}}</td>
                                                     <td>
-                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
+                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>1<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
                                                     </td>
                                                     <td>{{item.precio}}</td>
                                                     <td>
@@ -224,12 +224,14 @@
             },
             totalCotizacion(){
                 let a = 0;
+                let b;
                 this.carritoCompras.forEach(element => {
-                    element.precio = element.precio.replace("$","")
-                    element.precio = element.precio.replace(",","")
-                    a += parseInt(element.precio)
+                    b = element.precio
+                    b = b.replace("$","")
+                    b = b.replace(",","")
+                    a += parseInt(b)
                 });
-                return a;
+                return new Intl.NumberFormat('es-MX').format(a);
             }
         },
         computed:{
