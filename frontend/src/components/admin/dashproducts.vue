@@ -168,7 +168,6 @@
 
 <script>
 
-/* import moment from 'moment'; */
 
 export default {
     beforeCreate(){
@@ -272,12 +271,7 @@ export default {
             this.editar=true;
             this.axios.get(`/buscar-articulo/${id}`)
             .then(res=>{
-                this.articuloEditar=res.data;
-                
-                /* var fecha = moment(this.articuloEditar.fecha,"MM/DD/YY")
-                var fe = moment(fecha).format("YYYY-MM-DD")
-                this.articuloEditar.fecha = fe */
-
+                this.articuloEditar=res.data;   
             })
             .catch(e=>{
 

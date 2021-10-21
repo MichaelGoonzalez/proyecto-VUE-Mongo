@@ -55,49 +55,29 @@
                                                 </tr>  
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
+                                                <tr v-for= "item in carritoCompras" :key= "item.id">
+                                                    <td>{{item.nombre}}</td>
                                                     <td>
                                                         <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
                                                     </td>
-                                                    <td>$12,000</td>
-                                                    <td>
-                                                        <button><i class="fas fa-trash-alt hvr-push"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td>
-                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
-                                                    </td>
-                                                    <td>$12,000</td>
-                                                    <td>
-                                                        <button><i class="fas fa-trash-alt hvr-push"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>CINTA TRANSPARENTE CELLUX 100 M</td>
-                                                    <td>
-                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>12<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
-                                                    </td>
-                                                    <td>$12,000</td>
+                                                    <td>{{item.precio}}</td>
                                                     <td>
                                                         <button><i class="fas fa-trash-alt hvr-push"></i></button>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                             <tfoot style="border-bottom:hidden">
-                                                <tr>
+                                                <tr  v-show="carritoCompras.length !==0">
                                                     <td></td>
                                                     <td style="font-weight: bolder">Total</td>
-                                                    <td>12,000</td>
+                                                    <td>{{totalCotizacion()}}</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn2">Guardar</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancelar</button>
                                     </div>
                                 </div>
                         </div>
@@ -109,7 +89,7 @@
                     <section class="row">
                         <div v-for= "item in filtrarArticulos" :key= "item.id" class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" @click="agregarCotizacion(item._id)"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -160,7 +140,7 @@
                     <section class="row">
                         <div v-for= "item in forHerramientas" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" ><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -216,6 +196,7 @@
         data() {
             return {
                 articulosTabla: [],
+                carritoCompras: [],
                 nombreProducto: ""
             }
         },
@@ -223,15 +204,33 @@
             this.listarArticulos();
         },
         methods: {
-                listarArticulos(){
+            listarArticulos(){
                 this.axios.get('/listar-articulos')
-                    .then((response)=>{
-                        this.articulosTabla = response.data;
-                    })
-                    .catch(e=>{
+                .then((response)=>{
+                    this.articulosTabla = response.data;
+                })
+                .catch(e=>{
+                console.log(e.response);
+                })
+            },
+            agregarCotizacion(id){
+                this.axios.get(`/buscar-articulo/${id}`)
+                .then(res=>{
+                    this.carritoCompras.unshift(res.data)
+                })
+                .catch(e=>{
                     console.log(e.response);
                 })
-            } 
+            },
+            totalCotizacion(){
+                let a = 0;
+                this.carritoCompras.forEach(element => {
+                    element.precio = element.precio.replace("$","")
+                    element.precio = element.precio.replace(",","")
+                    a += parseInt(element.precio)
+                });
+                return a;
+            }
         },
         computed:{
             filtrarArticulos: function(){
