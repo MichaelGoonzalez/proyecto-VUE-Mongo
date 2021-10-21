@@ -1,5 +1,5 @@
 <template>
-        <div class="container mx-auto mt-5">
+        <div class="container mx-auto mt-5" style="margin-bottom: 5%">
             <div class="row">
                 <section class="col-md-10 mx-auto">
                     <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
