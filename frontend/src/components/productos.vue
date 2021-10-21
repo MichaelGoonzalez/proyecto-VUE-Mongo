@@ -253,48 +253,48 @@
         computed:{
             filtrarArticulos: function(){
                 return this.articulosTabla.filter((item)=>{
-                    return item.nombre.match(this.nombreProducto.toUpperCase());
+                    return item.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
                 })
             },
             forHogar: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Hogar'){
-                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
                     }
                 })
             },
             forElectricos: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Eléctricos'){
-                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
                     }
                 })
             },
             forHerramientas: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Herramientas'){
-                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
                     }
                 })
             },
             forTuberias: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Tuberia'){
-                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
                     }
                 })
             },
             forOtros: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Otros'){
-                        return i.nombre.match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
                     }
                 })
             }
             
         },
         mounted() {  
-        document.title = "Productos";  
+            document.title = "Productos";  
         } 
     }
 </script>
