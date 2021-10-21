@@ -55,22 +55,26 @@
                                                 </tr>  
                                             </thead>
                                             <tbody>
-                                                <tr v-for= "item in carritoCompras" :key= "item.id">
+                                                <tr v-for= "(item,index) in carritoCompras" :key= "index">
                                                     <td>{{item.nombre}}</td>
                                                     <td>
                                                         <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>1<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
                                                     </td>
                                                     <td>{{item.precio}}</td>
                                                     <td>
-                                                        <button><i class="fas fa-trash-alt hvr-push"></i></button>
+                                                        <button @click= "eliminarCotizacion(index)"><i class="fas fa-trash-alt hvr-push"></i></button>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                             <tfoot style="border-bottom:hidden">
-                                                <tr  v-show="carritoCompras.length !==0">
+                                                <tr  v-if="carritoCompras.length !==0">
                                                     <td></td>
                                                     <td style="font-weight: bolder">Total</td>
                                                     <td>{{totalCotizacion()}}</td>
+                                                </tr>
+                                                <tr v-else>
+                                                    <td></td>
+                                                    <td>No tienes productos en el carrito</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -202,6 +206,13 @@
         },
         created(){
             this.listarArticulos();
+            let llenarCarrito = JSON.parse(localStorage.getItem("carritoCompras"))
+
+            if (llenarCarrito !== null) {
+                this.carritoCompras = llenarCarrito;
+            }else{
+                this.carritoCompras = []
+            }
         },
         methods: {
             listarArticulos(){
@@ -217,10 +228,15 @@
                 this.axios.get(`/buscar-articulo/${id}`)
                 .then(res=>{
                     this.carritoCompras.unshift(res.data)
+                    localStorage.setItem("carritoCompras",JSON.stringify(this.carritoCompras));
                 })
                 .catch(e=>{
                     console.log(e.response);
                 })
+            },
+            eliminarCotizacion(index){
+                this.carritoCompras.splice(index,1)
+                localStorage.setItem("carritoCompras",JSON.stringify(this.carritoCompras));
             },
             totalCotizacion(){
                 let a = 0;
