@@ -58,7 +58,7 @@
                                                 <tr v-for= "(item,index) in carritoCompras" :key= "index">
                                                     <td>{{item.nombre}}</td>
                                                     <td>
-                                                        <button><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>1<button><i class="fas fa-plus hvr-push" style="padding-left: 12px"></i></button>
+                                                        <button v-show="item.cantidadCarrito > 1" @click= "reducirCantidadCarrito(index)"><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>{{item.cantidadCarrito}}<button><i class="fas fa-plus hvr-push" style="padding-left: 12px" @click= "incrementarCantidadCarrito(index)"></i></button>
                                                     </td>
                                                     <td>{{item.precio}}</td>
                                                     <td>
@@ -227,12 +227,21 @@
             agregarCotizacion(id){
                 this.axios.get(`/buscar-articulo/${id}`)
                 .then(res=>{
+                    res.data.cantidadCarrito = 1;
                     this.carritoCompras.unshift(res.data)
                     localStorage.setItem("carritoCompras",JSON.stringify(this.carritoCompras));
                 })
                 .catch(e=>{
                     console.log(e.response);
                 })
+            },
+            incrementarCantidadCarrito(index){
+                this.carritoCompras[index].cantidadCarrito += 1;
+                localStorage.setItem("carritoCompras",JSON.stringify(this.carritoCompras));
+            },
+            reducirCantidadCarrito(index){
+                this.carritoCompras[index].cantidadCarrito -= 1;
+                localStorage.setItem("carritoCompras",JSON.stringify(this.carritoCompras));
             },
             eliminarCotizacion(index){
                 this.carritoCompras.splice(index,1)
@@ -245,7 +254,7 @@
                     b = element.precio
                     b = b.replace("$","")
                     b = b.replace(",","")
-                    a += parseInt(b)
+                    a += parseInt(b) * element.cantidadCarrito
                 });
                 return new Intl.NumberFormat('es-MX').format(a);
             }
