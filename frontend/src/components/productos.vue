@@ -58,7 +58,7 @@
                                                 <tr v-for= "(item,index) in carritoCompras" :key= "index">
                                                     <td>{{item.nombre}}</td>
                                                     <td>
-                                                        <button v-show="item.cantidadCarrito > 1" @click= "reducirCantidadCarrito(index)"><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>{{item.cantidadCarrito}}<button><i class="fas fa-plus hvr-push" style="padding-left: 12px" @click= "incrementarCantidadCarrito(index)"></i></button>
+                                                        <button v-bind:disabled= "item.cantidadCarrito == 1" @click= "reducirCantidadCarrito(index)"><i class="fas fa-minus hvr-push" style="padding-right: 12px"></i></button>{{item.cantidadCarrito}}<button><i class="fas fa-plus hvr-push" style="padding-left: 12px" @click= "incrementarCantidadCarrito(index)"></i></button>
                                                     </td>
                                                     <td>{{item.precio}}</td>
                                                     <td>
