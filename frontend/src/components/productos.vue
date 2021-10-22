@@ -1,5 +1,5 @@
 <template>
-        <div class="container mx-auto mt-5" style="margin-bottom: 5%">
+        <div class="container mx-auto mt-5 mb-5">
             <div class="row">
                 <section class="col-md-10 mx-auto">
                     <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
@@ -29,7 +29,7 @@
                         </li>
                         <li class="nav-item fontsearch" style="margin-left: 4%">
                                 <i class="fas fa-search"></i>
-                                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "nombreProducto">
+                                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "buscarProducto">
                         </li>
                         <li class="nav-item">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">
@@ -201,7 +201,7 @@
             return {
                 articulosTabla: [],
                 carritoCompras: [],
-                nombreProducto: ""
+                buscarProducto: ""
             }
         },
         created(){
@@ -253,41 +253,41 @@
         computed:{
             filtrarArticulos: function(){
                 return this.articulosTabla.filter((item)=>{
-                    return item.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
+                    return item.nombre.toUpperCase().match(this.buscarProducto.toUpperCase());
                 })
             },
             forHogar: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Hogar'){
-                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.buscarProducto.toUpperCase());
                     }
                 })
             },
             forElectricos: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Eléctricos'){
-                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.buscarProducto.toUpperCase());
                     }
                 })
             },
             forHerramientas: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Herramientas'){
-                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.buscarProducto.toUpperCase());
                     }
                 })
             },
             forTuberias: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Tuberia'){
-                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.buscarProducto.toUpperCase());
                     }
                 })
             },
             forOtros: function(){
                 return this.articulosTabla.filter((i) => {
                     if(i.categoria === 'Otros'){
-                        return i.nombre.toUpperCase().match(this.nombreProducto.toUpperCase());
+                        return i.nombre.toUpperCase().match(this.buscarProducto.toUpperCase());
                     }
                 })
             }

@@ -151,7 +151,7 @@ router.get('/buscar-usuario/:id', async(req, res) => {
 }); 
 
 /*Editar usuarios*/
-router.put('/editar-usuario:id',async(req,res)=>{
+router.put('/editar-usuario/:id',async(req,res)=>{
     
     const _id=req.params.id;
     const body =req.body;
