@@ -2,7 +2,7 @@
     <div class="d-flex w-100 h-100 mx-auto flex-column">
         <header class="mb-auto">
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-                <div class="container">
+                <div class="container" style="margin-left:50px">
                     <router-link to="/" class="navbar-brand mx-xs-0 mx-sm-4 mx-lg-5">
                         <img src="../src/assets/logo.png" alt="" width="150" height="40" class="d-inline-block align-text-top" />
                     </router-link>
