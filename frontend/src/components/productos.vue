@@ -110,7 +110,7 @@
                     <section class="row">
                         <div v-for= "item in forHogar" :key= "item.id"  class="col-12 col-md-4 col-lg-3 mt-5">
                             <div  class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus" ></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" @click="agregarCotizacion(item._id)"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -127,7 +127,7 @@
                     <section class="row">
                         <div v-for= "item in forElectricos" :key= "item.id1" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" @click="agregarCotizacion(item._id)"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto"> 
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -144,7 +144,7 @@
                     <section class="row">
                         <div v-for= "item in forHerramientas" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización" ><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" @click="agregarCotizacion(item._id)"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -161,7 +161,7 @@
                     <section class="row">
                         <div v-for= "item in forTuberias" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" @click="agregarCotizacion(item._id)"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h5 class="card-title color-marca">{{item.nombre}}</h5>
@@ -178,7 +178,7 @@
                     <section class="row">
                         <div v-for= "item in forOtros" :key= "item.id3" class="col-12 col-md-4 col-lg-3 mt-5">
                             <div class="card m-auto shadow" style="width: 200px;">
-                                <button type="button" class="tags" gloss="Añadir a cotización"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
+                                <button type="button" class="tags" gloss="Añadir a cotización" @click="agregarCotizacion(item._id)"><i class="fas fa-plus-square hvr-bounce-in" id="plus"></i></button>
                                 <img v-bind:src= "item.url" class="card-img-top" alt="Imagen producto" id="imagenes-producto">
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.nombre}}</h6>
