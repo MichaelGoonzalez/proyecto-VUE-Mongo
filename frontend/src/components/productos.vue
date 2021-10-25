@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn2">Guardar</button>
-                                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-secondary " @click= "vaciarCarrito()">Cancelar</button>
                                     </div>
                                 </div>
                         </div>
@@ -258,6 +258,10 @@
                     a += parseInt(b) * element.cantidadCarrito
                 });
                 return new Intl.NumberFormat('es-MX').format(a);
+            },
+            vaciarCarrito(){
+                this.carritoCompras = [];
+                localStorage.setItem("carritoCompras",JSON.stringify(this.carritoCompras));
             }
         },
         computed:{
