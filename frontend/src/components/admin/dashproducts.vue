@@ -51,6 +51,10 @@
                                         <input type="text" class="form-control" id="cantidad" v-model="articuloEditar.cantidad">
                                     </div>
                                     <div class="element">
+                                        <div class="label"><label for="cantidad" class="form-label text-dark">Imagen</label></div>
+                                        <input type="text" class="form-control" id="url" v-model="articuloEditar.url">
+                                    </div>
+                                    <div class="element">
                                         <div class="label"><label for="fecha" class="text-dark form-label">Fecha de registro</label></div>
                                         <input type="date" class="form-control" id="fecha" v-model="articuloEditar.fecha">
                                     </div>
@@ -83,6 +87,10 @@
                                     <div class="element">
                                         <div class="label"><label for="cantidad" class="form-label text-dark">Cantidad</label></div>
                                         <input type="number" class="form-control" id="cantidad" v-model="atributos.cantidad">
+                                    </div>
+                                    <div class="element">
+                                        <div class="label"><label for="url" class="form-label text-dark">Imagen</label></div>
+                                        <input type="text" class="form-control" id="url" v-model="atributos.url">
                                     </div>
                                     <div class="element">
                                         <div class="label"><label for="categoria" class="form-label text-dark">Categoría</label></div>
@@ -188,6 +196,7 @@ export default {
                 nombre: "",
                 precio: "",
                 cantidad: "",
+                url: "",
                 fecha: "",
                 descripcion: ""
             },
@@ -258,6 +267,7 @@ export default {
                 this.atributos.codigo = "";
                 this.atributos.precio = "";
                 this.atributos.cantidad = "";
+                this.atributos.url = "";
                 this.descripcion = "";
                 this.getDataPagina(this.paginaActual);
                 res.data
@@ -289,7 +299,8 @@ export default {
                 this.articulosTabla[index].nombre=res.data.nombre;
                 this.articulosTabla[index].precio = res.data.precio;
                 this.articulosTabla[index].cantidad = res.data.cantidad;
-                this.articulosTabla[index].categoria = res.data.categoria
+                this.articulosTabla[index].categoria = res.data.categoria;
+                this.articulosTabla[index].url = res.data.url;
                 this.articulosTabla[index].fecha = res.data.fecha
                 this.articulosTabla[index].descripcion=res.data.descripcion;
                 this.getDataPagina(this.paginaActual);
