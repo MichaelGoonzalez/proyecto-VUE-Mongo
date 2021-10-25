@@ -12,7 +12,7 @@
                         </router-link>
                         <router-link class="text-decoration-none" to="/"><i class="fas fa-sign-out-alt m-1"></i>Salir</router-link>
                     </nav>
-                </div>
+                </div> 
 
                 <main class="main col">
                     <div class="row justify-content align-content-center text-center d-flex">
