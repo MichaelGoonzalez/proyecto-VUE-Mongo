@@ -127,7 +127,7 @@
                             <div class="contenedor">
                                 <h2>Lista de productos</h2>
                                 <div class="element">
-                                <div class="label"><label for="codeproduct" class="form-label text-dark">Código del producto</label></div>
+                                <div class="label"><label for="codeproduct" class="form-label text-dark">Nombre del producto</label></div>
                                     <input type="text" class="form-control" id="codeproduct" v-model= "codigoProducto" autocomplete="off">
                                     <br>
                                 </div>                
@@ -332,7 +332,7 @@ export default {
                 array = this.articulosTabla
             }
             return array.filter((item)=>{
-                return item.codigo.match(this.codigoProducto);
+                return item.nombre.toUpperCase().match(this.codigoProducto.toUpperCase());
             })
 
         }
