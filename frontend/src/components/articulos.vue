@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto mt-5">
+    <div class="container mx-auto mt-5 mb-5">
         <div class="row">
             <section class="col-md-10 mx-auto">
                 <ul class="nav nav-tabs nav-tabsp nav-fill" id="productos" role="tablist">
@@ -32,7 +32,10 @@
                                 <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                 <h5 class="card-title text-black">{{item.titulo}}</h5>
                                 <p class="card-text text-black">
-                                    {{item.descripcion}}<a :href = "item.url" class="text-danger">  Leer más...</a>
+                                    <section class="review__articulo__text">
+                                        {{item.descripcion}}
+                                    </section>
+                                    <a :href = "item.url" class="text-danger">  Leer más...</a>
                                 </p>
                             </div>
                         </div>
@@ -47,7 +50,7 @@
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                     <h5 class="card-title text-black">{{item.titulo}}</h5>
-                                    <p class="card-text text-black">
+                                    <p class="card-text text-black review__articulo__text">
                                         {{item.descripcion}}<a :href = "item.url" class="text-danger">  Leer más...</a>
                                     </p>
                                 </div>
@@ -63,7 +66,7 @@
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                     <h5 class="card-title text-black">{{item.titulo}}</h5>
-                                    <p class="card-text text-black">
+                                    <p class="card-text text-black review__articulo__text">
                                         {{item.descripcion}}<a :href = "item.url" class="text-danger">  Leer más...</a>
                                     </p>
                                 </div>
@@ -79,9 +82,10 @@
                                 <div class="card-body border-top text-start">
                                     <h6 class="card-title color-marca">{{item.clase}}</h6>                                    
                                     <h5 class="card-title text-black">{{item.titulo}}</h5>
-                                    <p class="card-text text-black">
-                                        {{item.descripcion}}<a :href = "item.url" class="text-danger">  Leer más...</a>
+                                    <p class="card-text text-black review__articulo__text">
+                                        {{item.descripcion}}
                                     </p>
+                                    <a :href = "item.url" class="text-danger">  Leer más...</a>
                                 </div>
                         </div>
                     </div>
@@ -119,7 +123,7 @@
                     url: "https://www.larepublica.co/empresas/el-gran-salon-ferretero-contara-con-50-expositores-y-espera-reactivar-esta-industria-3244525",
                     img: require('../assets/ferretero-01.jpg'),
                     clase: "Noticias",
-                    titulo: "El Gran Salón Ferretero contará con 50 expositores y espera reactivar esta industria",
+                    titulo: "El Gran Salón Ferretero contará con 50 expositorea.",
                     descripcion: "El evento tendrá una afluencia aproximada de 2.000 personas, apenas por debajo de la cifra presentada en la feria de 2019. Durante el 8 y 9 de octubre se llevará a cabo El Gran Salón ferretero, de forma presencial. Este evento de negocios pretende facilitar un espacio de encuentro entre marcas, distribuidores y profesionales ferreteros." + "" + "Este se llevará a cabo en el centro comercial Mall Plaza NQS de Bogotá, si deseas mas informacion te invitamos a seguir leyendo... "
                     
 
@@ -136,7 +140,7 @@
                     url:"https://mejorconsalud.as.com/hacer-mesa-auxiliar/",
                     img: "https://mesaauxiliares.com/wp-content/uploads/2020/12/mesa-auxiliar-de-comedor-300x200.jpg",
                     clase: "Tutorial",
-                    titulo: "¿Cómo hacer una mesa auxiliar?",
+                    titulo: "¿Cómo hacer una mesa auxiliar de madera y metal?",
                     descripcion: "Las mesas auxiliares son indispensables en el hogar porque resultan muy prácticas y aportan estilo. ¡Aprende a hacer una tú mismo!" + "                 "+ " Hacer una mesa auxiliar es una gran idea. Se trata de un mueble funcional y aporta estilo a la decoración. Este tipo de mesas complementan muy bien diversos espacios; permiten reposar objetos como floreros, libros o cualquier otro tipo de elemento decorativo." 
                     
                 },
@@ -178,6 +182,13 @@
 </script>
 
 <style>
+    .review__articulo__text{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 10;
+        line-clamp: 10;
+        overflow: hidden;
+    }
     #contenedor{
         margin: 5%;
     }
