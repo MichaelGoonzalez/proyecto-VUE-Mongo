@@ -29,7 +29,7 @@
                         </li>
                         <li class="nav-item fontsearch" style="margin-left: 4%">
                                 <i class="fas fa-search"></i>
-                                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "buscarProducto">
+                                <input class="find form-control me-2" type="search" placeholder="Buscar" aria-label="Search" v-model= "buscarProducto">
                         </li>
                         <li class="nav-item">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#cotizar" id="cart-btn">

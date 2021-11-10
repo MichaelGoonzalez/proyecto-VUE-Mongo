@@ -399,7 +399,7 @@ h2{
 .fontsearch i{
     position: absolute;
     color: rgb(216, 208, 208);
-    margin: 3% 6% 3% 84%;
+    margin: 3% 6% 3% 3%;
     font-size: 1.5em;
 }
 .fontuser {
@@ -421,4 +421,7 @@ h2{
   color: rgb(216, 208, 208);
   margin: 9% 40% 3% 38%;
   font-size: 1.5em;
+}
+.find{
+  padding-left: 35px;
 }
